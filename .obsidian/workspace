@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "82d53a8b7053a491",
+        "id": "940359a414a0f1d9",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "计算机基础知识/计算机网络/03路由.md",
+            "file": "后端/Java/JUC/进阶/10控制并发流程（做好线程之间的协调人）.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "572d1fa28c4e90b7",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "计算机基础知识/计算机网络/03路由.md",
+                "file": "后端/Java/JUC/进阶/10控制并发流程（做好线程之间的协调人）.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,7 +87,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "计算机基础知识/计算机网络/03路由.md"
+                "file": "后端/Java/JUC/进阶/10控制并发流程（做好线程之间的协调人）.md"
               }
             }
           }
@@ -95,20 +96,19 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
-  "active": "82d53a8b7053a491",
+  "active": "940359a414a0f1d9",
   "lastOpenFiles": [
-    "计算机基础知识/计算机网络/03路由.md",
+    "后端/Java/JUC/进阶/10控制并发流程（做好线程之间的协调人）.md",
     "后端/Java/JUC/进阶/09ConcurrentHashMap等并发集合(面试超高频考点).md",
-    "后端/Java/JUC/进阶/07CAS（不可中断的典范）.md",
-    "后端/Java/JUC/进阶/06atomic包（一刻也不能分割）.md",
-    "后端/Java/JUC/进阶/04ThreadLocal（一次性解决遗留问题）.md",
-    "后端/Java/JUC/进阶/03线程池（治理线程的法宝）.md",
     "后端/Java/JUC/进阶/02鸟瞰Java并发.md",
-    "后端/Java/JUC/进阶/01为什么要学习并发编程.md",
+    "后端/Java/JUC/进阶/03线程池（治理线程的法宝）.md",
+    "后端/Java/JUC/进阶/04ThreadLocal（一次性解决遗留问题）.md",
     "后端/Java/JUC/进阶/05不可不说的“锁”事（种类繁多，如何一一突破）.md",
-    "后端/Java/JUC/进阶/08以不变应万变（最便捷的并发安全之道）.md"
+    "后端/Java/JUC/进阶/08以不变应万变（最便捷的并发安全之道）.md",
+    "计算机基础知识/计算机网络/03路由.md",
+    "后端/Java/JUC/进阶/07CAS（不可中断的典范）.md",
+    "后端/Java/JUC/进阶/06atomic包（一刻也不能分割）.md"
   ]
 }
