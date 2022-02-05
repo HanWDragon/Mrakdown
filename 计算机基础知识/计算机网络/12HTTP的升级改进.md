@@ -18,7 +18,7 @@
 	- SPDY是HTTP/2的前身
 		- 2015年9月，Google宣布移除对SPDY的支持，拥抱HTTP/2
 
-<img src="image/image-20220113000244969.png" alt="image-20220113000244969" style="zoom:50%;" />
+![](image/image-20220113000244969.png)
 
 # HTTP/2
 
@@ -38,7 +38,7 @@
 - HTTP/2采用二进制格式传输数据，而非HTTP/1.1的文本格式
 - 二进制格式在协议的解析和优化扩展上带来更多的优势和可能 |
 
-<img src="image/image-20220113000341810.png" alt="image-20220113000341810" style="zoom:50%;" />
+![](image/image-20220113000341810.png)
 
 # HTTP/2-一些基本概念
 
@@ -48,9 +48,9 @@
 - 帧:HTTP/2通信的最小单位，每个帧都包含帧头（会标识出当前帧所属的数据流）
 	- 来自不同数据流的帧可以交错发送，然后再根据每个帧头的数据流标识符重新组装
 
-<img src="image/image-20220113000559850.png" alt="image-20220113000559850" style="zoom:50%;" />
+![](image/image-20220113000559850.png)
 
-<img src="image/image-20220113000728484.png" alt="image-20220113000728484" style="zoom:50%;" />
+![](image/image-20220113000728484.png)
 
 # HTTP/2的特性-多路复用（Multiplexing）
 
@@ -61,11 +61,11 @@
 - 不必再为绕过HTTP/1.1限制而做很多工作
 	- 比如image sprites、合并CSS\JS、内嵌CSS\JS\Base64图片、域名分片等
 
-<img src="image/image-20220113001044488.png" alt="image-20220113001044488" style="zoom:50%;" />
+![](image/image-20220113001044488.png)
 
-<img src="image/image-20220113001240182.png" alt="image-20220113001240182" style="zoom:50%;" />
+![](image/image-20220113001240182.png)
 
-<img src="image/image-20220113001308746.png" alt="image-20220113001308746" style="zoom:50%;" />
+![](image/image-20220113001308746.png)
 
 # HTTP/2的特性-优先级
 
@@ -76,7 +76,7 @@
 - 服务器可以使用此信息通过控制CPU、内存和其他资源的分配设定数据流处理的优先级
 	- 在资源数据可用之后，确保将高优先级响应以最优方式传输至客户端
 
-<img src="image/image-20220113001538550.png" alt="image-20220113001538550" style="zoom:50%;" />
+![](image/image-20220113001538550.png)
 
 - 应尽可能先给父数据流分配资源
 - 同级数据流（共享相同父项）应按其权重比例分配资源 
@@ -94,9 +94,9 @@
 	- 但在2012年夏天，被攻击导致会话劫持
 	- 后被更安全的HPACK取代
 
-<img src="image/image-20220113002923215.png" alt="image-20220113002923215" style="zoom:50%;" />
+![](image/image-20220113002923215.png)
 
-<img src="image/image-20220113155621183.png" alt="image-20220113155621183" style="zoom:50%;" />
+![](image/image-20220113155621183.png)
 
  
 
@@ -105,23 +105,23 @@
 - 服务器可以对一个客户端请求发送多个响应
 	- 除了对最初请求的响应外，服务器还可以向客户端推送额外资源，而无需客户端额外明确地请求
 
-<img src="image/image-20220113002957461.png" alt="image-20220113002957461" style="zoom:50%;" />
+![](image/image-20220113002957461.png)
 
-<img src="image/image-20220113003019067.png" alt="image-20220113003019067" style="zoom:50%;" />
+![](image/image-20220113003019067.png)
 
 # HTTP/2的问题-队头阻塞（head of line blocking）
 
- <img src="image/image-20220113003055969.png" alt="image-20220113003055969" style="zoom:50%;" />
+ ![](image/image-20220113003055969.png)
 
-<img src="image/image-20220113003132971.png" alt="image-20220113003132971" style="zoom:50%;" />
+![](image/image-20220113003132971.png)
 
 # HTTP/2的问题-握手延迟
 
 - RTT（Round Trip Time）：往返时延，可以简单的理解为通信一来一回的时间
 
-<img src="image/image-20220113003208570.png" alt="image-20220113003208570" style="zoom:50%;" />
+![](image/image-20220113003208570.png)
 
-<img src="image/image-20220113003245616.png" alt="image-20220113003245616" style="zoom:50%;" />
+![](image/image-20220113003245616.png)
 
 # HTTP/3
 
@@ -130,7 +130,7 @@
 - QUIC（**Q**uick **U**DP **I**nternet **C**onnections），译为:快速UDP网络连接，由Google开发，在2013年实现
 - 于2018年从HTTP-over-QUIC改为HTTP/3
 
-<img src="image/image-20220113003312189.png" alt="image-20220113003312189" style="zoom:50%;" />
+![](image/image-20220113003312189.png)
 
 # HTTP/3-疑问
 

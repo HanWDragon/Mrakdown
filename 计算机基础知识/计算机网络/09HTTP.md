@@ -49,25 +49,25 @@
 
 ## 核心规则
 
-<img src="image/image-20220110212008992.png" alt="image-20220110212008992" style="zoom:50%;" />
+![](image/image-20220110212008992.png)
 
 # 报文格式
 
-<img src="image/image-20220110211428405.png" alt="image-20220110211428405" style="zoom:50%;" />
+![](image/image-20220110211428405.png)
 
-<img src="image/image-20220110211421347.png" alt="image-20220110211421347" style="zoom:50%;" />
+![](image/image-20220110211421347.png)
 
 ## 整体
 
-<img src="image/image-20220110212148749.png" alt="image-20220110212148749" style="zoom:50%;" />
+![](image/image-20220110212148749.png)
 
 ## request-line、status-line
 
-<img src="image/image-20220110212323904.png" alt="image-20220110212323904" style="zoom:50%;" />
+![](image/image-20220110212323904.png)
 
 ## header-filed、message-body
 
-<img src="image/image-20220110212434610.png" alt="image-20220110212434610" style="zoom:50%;" />
+![](image/image-20220110212434610.png)
 
 # URL的编码
 
@@ -116,22 +116,22 @@
 
 ## 请求头字段
 
-<img src="image/image-20220110213639087.png" alt="image-20220110213639087" style="zoom:50%;" />
+![](image/image-20220110213639087.png)
 
 - q 值越大，表示优先级越高
 - 如果不指定 q 值，默认是 1.0 （1.0 是最大值）
 
-<img src="image/image-20220110213713768.png" alt="image-20220110213713768" style="zoom:50%;" />
+![](image/image-20220110213713768.png)
 
-<img src="image/image-20220110213743485.png" alt="image-20220110213743485" style="zoom:50%;" />
+![](image/image-20220110213743485.png)
 
 ## 响应头字段
 
-<img src="image/image-20220110213948088.png" alt="image-20220110213948088" style="zoom:50%;" />
+![](image/image-20220110213948088.png)
 
-<img src="image/image-20220110214014848.png" alt="image-20220110214014848" style="zoom:50%;" />
+![](image/image-20220110214014848.png)
 
-<img src="image/image-20220110214105436.png" alt="image-20220110214105436" style="zoom:50%;" />
+![](image/image-20220110214105436.png)
 
 # 状态码（Status Code）
 
@@ -182,7 +182,7 @@
 
 ## multipart/form-data
 
-<img src="image/image-20220110223628940.png" alt="image-20220110223628940" style="zoom:50%;" />
+![](image/image-20220110223628940.png)
 
 # CROS
 
@@ -192,7 +192,7 @@
 	- 它规定了：默认情况下，AJAX 请求只能发送给同源的 URL
 	- 同源是指 3 个相同：协议、域名（IP）、端口
 
-<img src="image/image-20220110220643947.png" alt="image-20220110220643947" style="zoom:50%;" />
+![](image/image-20220110220643947.png)
 
 - img、script、link、iframe、video、audio 等标签不受同源策略的影响
 
@@ -215,7 +215,7 @@
 		- 面向下游的客户端：它是服务器
 		- 面向上游的服务器：它是客户端
 
-<img src="image/image-20220111092616568.png" alt="image-20220111092616568" style="zoom:50%;" />
+![](image/image-20220111092616568.png)
 
 ## 正向代理、反向代理
 
@@ -224,11 +224,11 @@
 
 正向代理
 
-<img src="image/image-20220111101027878.png" alt="image-20220111101027878" style="zoom:50%;" />
+![](image/image-20220111101027878.png)
 
 反向代理
 
-<img src="image/image-20220111101105193.png" alt="image-20220111101105193" style="zoom:50%;" />
+![](image/image-20220111101105193.png)
 
 ## 正向代理的作用
 
@@ -236,7 +236,7 @@
 
 - 绕过防火墙（突破访问限制）
 
-	<img src="image/image-20220111102808772.png" alt="image-20220111102808772" style="zoom:50%;" />
+	![](image/image-20220111102808772.png)
 
 - Internet 访问控制
 
@@ -252,24 +252,24 @@
 - 安全防护
 - 负载均衡
 
-<img src="image/image-20220111103941494.png" alt="image-20220111103941494" style="zoom:50%;" />
+![](image/image-20220111103941494.png)
 
 ## 抓包工具的原理
 
 - Fiddler、Charles 等抓包工具的原理：在客户端启动了正向代理服务
 
-<img src="image/image-20220111104835427.png" alt="image-20220111104835427" style="zoom:50%;" />
+![](image/image-20220111104835427.png)
 
 - 需要注意的是
 	- Wireshark的原理是：通过底层驱动，拦截网卡上流过的数据
 
 ## 代理服务器相关的头部字段
 
-<img src="image/image-20220111105504113.png" alt="image-20220111105504113" style="zoom:50%;" />
+![](image/image-20220111105504113.png)
 
-<img src="image/image-20220111105604006.png" alt="image-20220111105604006" style="zoom:50%;" />
+![](image/image-20220111105604006.png)
 
-<img src="image/image-20220111105546468.png" alt="image-20220111105546468" style="zoom:50%;" />
+![](image/image-20220111105546468.png)
 
 # CDN
 
@@ -278,9 +278,9 @@
 	- 利用最靠近每位用户的服务器
 	- 更快更可靠的将音乐、图片、视频等资源文件（一般是静态资源）传递给用户
 
-	<img src="image/image-20220111110158355.png" alt="image-20220111110158355" style="zoom:50%;" />
+	![](image/image-20220111110158355.png)
 
-<img src="image/image-20220111110209562.png" alt="image-20220111110209562" style="zoom:50%;" />
+![](image/image-20220111110209562.png)
 
 ## 使用 CDN 前后
 
@@ -288,19 +288,19 @@
 	- 部署了大量拥有高储存高带宽的节点，构建了一个跨运营商，跨地域的专用网络
 - 内容所有者向 CDN 运营商支付费用，CDN 将其内容交付给用户
 
-<img src="image/image-20220111110249117.png" alt="image-20220111110249117" style="zoom:50%;" />
+![](image/image-20220111110249117.png)
 
-<img src="image/image-20220111110302663.png" alt="image-20220111110302663" style="zoom:50%;" />
+![](image/image-20220111110302663.png)
 
 ## 使用 CDN 前
 
-<img src="image/image-20220111111203713.png" alt="image-20220111111203713" style="zoom:50%;" />
+![](image/image-20220111111203713.png)
 
 ## 使用 CDN 后
 
-<img src="image/image-20220111111439137.png" alt="image-20220111111439137" style="zoom:50%;" />
+![](image/image-20220111111439137.png)
 
-<img src="image/image-20220111111529065.png" alt="image-20220111111529065" style="zoom:50%;" />
+![](image/image-20220111111529065.png)
 
-<img src="image/image-20220111111752326.png" alt="image-20220111111752326" style="zoom:50%;" />
+![](image/image-20220111111752326.png)
 

@@ -27,7 +27,7 @@
 
 ## 工作在那一层
 
-<img src="image/image-20220112132328359.png" alt="image-20220112132328359" style="zoom:50%;" />
+![](image/image-20220112132328359.png)
 
 # OpenSSL
 
@@ -54,14 +54,14 @@
 -  2 TLS的连接 
 -  3 HTTP请求和响应 
 
-<img src="image/image-20220112142405143.png" alt="image-20220112142405143" style="zoom:50%;" />
+![](image/image-20220112142405143.png)
 
 # TSL 1.2 的连接
 
 - 大概是有 10 步骤
 - 图片中省略了中间产生的一些 ACK 确认
 
-<img src="image/image-20220112142808619.png" alt="image-20220112142808619" style="zoom:50%;" />
+![](image/image-20220112142808619.png)
 
 ## 第一步
 
@@ -74,7 +74,7 @@
 
 	- 一个随机数(Client Random) 
 
-<img src="image/image-20220112144116939.png" alt="image-20220112144116939" style="zoom:50%;" />
+![](image/image-20220112144116939.png)
 
 ## 第二步
 
@@ -84,14 +84,14 @@
 		- 是从接收到的客户端加密组件列表中挑选出来的
 	- 一个随机数(Server Random)
 
-<img src="image/image-20220112145854372.png" alt="image-20220112145854372" style="zoom:50%;" />
+![](image/image-20220112145854372.png)
 
 ## 第三步
 
 3. Certificate
 	- 服务器的公钥证书(被CA签名过的)
 
-<img src="image/image-20220112145922543.png" alt="image-20220112145922543" style="zoom:50%;" />
+![](image/image-20220112145922543.png)
 
 ## 第四步
 
@@ -100,7 +100,7 @@
 		- ECDHE是一种密钥交换算法
 		- 为了防止伪造，Server Params经过了服务器私钥签名
 
-<img src="image/image-20220112145940076.png" alt="image-20220112145940076" style="zoom:50%;" />
+![](image/image-20220112145940076.png)
 
 ## 第五步
 
@@ -113,7 +113,7 @@
 	- Client Random、Server Random、Server Params
 - 而且，客户端也已经拿到了服务器的公钥证书，接下来，客户端会验证证书的真实有效性
 
-<img src="image/image-20220112145957786.png" alt="image-20220112145957786" style="zoom:50%;" />
+![](image/image-20220112145957786.png)
 
 ## 第六步
 
@@ -121,7 +121,7 @@
 
 	- 用以实现ECDHE算法的另一个参数(Client Params)
 
-	<img src="image/image-20220112150034439.png" alt="image-20220112150034439" style="zoom:50%;" />
+	![](image/image-20220112150034439.png)
 
 - 目前为止，客户端和服务器都拥有了 ECDHE 算法需要的2个参数：Server Params、Client Params
 - 客户端、服务器都可以
@@ -134,7 +134,7 @@
 7. Change Cipher Spec
 	- 告知服务器:之后的通信会采用计算出来的会话密钥进行加密
 
-<img src="image/image-20220112150054214.png" alt="image-20220112150054214" style="zoom:50%;" />
+![](image/image-20220112150054214.png)
 
 ## 第八步
 
@@ -142,7 +142,7 @@
 	- 包含连接至今全部报文的整体校验值(摘要)，加密之后发送给服务器
 	- 这次握手协商是否成功，要以服务器是否能够正确解密该报文作为判定标准
 
-<img src="image/image-20220112150108431.png" alt="image-20220112150108431" style="zoom:50%;" />
+![](image/image-20220112150108431.png)
 
 ## 第九、十步
 

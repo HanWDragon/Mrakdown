@@ -1,16 +1,16 @@
 # 两大使用场景-ThreadLocal的用途
 
-<img src="image/image-20220203162817660.png" alt="image-20220203162817660" style="zoom:50%;" />
+![image-20220203162817660](image/image-20220203162817660.png)
 
 ## 典型场景1:每个线程都需要一个独享的对象
 
-<img src="image/image-20220203162924700.png" alt="image-20220203162924700" style="zoom:50%;" />
+![](image/image-20220203162924700.png)
 
-<img src="image/image-20220203163000292.png" alt="image-20220203163000292" style="zoom:50%;" />
+![](image/image-20220203163000292.png)
 
 ### 两个线程分别用自己的SimpleDateFormat
 
-<img src="image/image-20220203163109191.png" alt="image-20220203163109191" style="zoom:50%;" />
+![](image/image-20220203163109191.png)
 
 ```java
 package threadlocal;
@@ -51,7 +51,7 @@ public class ThreadLocalNormalUsage00 {
 
 ### 但是有很多线程都需要使用SimpleDateFormat，那就有 10 个 SimpleDateFormat 和 10 个线程，写法不优雅
 
-<img src="image/image-20220203163812422.png" alt="image-20220203163812422" style="zoom:50%;" />
+![](image/image-20220203163812422.png)
 
 ```java
 package threadlocal;
@@ -175,7 +175,7 @@ public class ThreadLocalNormalUsage03 {
 
 ## 原因就是所有的线程都共用同一个SimpleDateFormat（线程不安全）对象
 
-<img src="image/image-20220203164816748.png" alt="image-20220203164816748" style="zoom:50%;" />
+![](image/image-20220203164816748.png)
 
 ### 遇到线程不安全问题我们首先想到的都是加锁，但是这样会导致效率比较低
 
@@ -223,7 +223,7 @@ public class ThreadLocalNormalUsage04 {
 
 ### 更好的解决方法就是ThreadLocal
 
-<img src="image/image-20220203170007598.png" alt="image-20220203170007598" style="zoom:50%;" />
+![](image/image-20220203170007598.png)
 
 ```java
 package threadlocal;
@@ -281,21 +281,21 @@ class ThreadSafeFormatter {
 
 ### 当前用户信息需要被线程内所有方法共享
 
-<img src="image/image-20220203171112438.png" alt="image-20220203171112438" style="zoom:50%;" />
+![](image/image-20220203171112438.png)
 
-<img src="image/image-20220203171708844.png" alt="image-20220203171708844" style="zoom:50%;" />
+![](image/image-20220203171708844.png)
 
-<img src="image/image-20220203171735376.png" alt="image-20220203171735376" style="zoom:50%;" />
+![](image/image-20220203171735376.png)
 
-<img src="image/image-20220203171759246.png" alt="image-20220203171759246" style="zoom:50%;" />
+![](image/image-20220203171759246.png)
 
 ### 每个线程内需要保存全局变量，可以让不同方法直接使用，避免参数传递的麻烦
 
-<img src="image/image-20220203171513455.png" alt="image-20220203171513455" style="zoom:50%;" />
+![](image/image-20220203171513455.png)
 
 ### 使用方法
 
-<img src="image/image-20220203171840211.png" alt="image-20220203171840211" style="zoom:50%;" />
+![](image/image-20220203171840211.png)
 
 ```java
 package threadlocal;
@@ -356,77 +356,77 @@ class User {
 }
 ```
 
-<img src="image/image-20220203172307084.png" alt="image-20220203172307084" style="zoom:50%;" />
+![](image/image-20220203172307084.png)
 
-<img src="image/image-20220203172513832.png" alt="image-20220203172513832" style="zoom:50%;" />
+![](image/image-20220203172513832.png)
 
 ## 根据共享对象的生成时机不同，选择initialValue或set来保存对象
 
 ### initialValue
 
-<img src="image/image-20220203172832714.png" alt="image-20220203172832714" style="zoom:50%;" />
+![](image/image-20220203172832714.png)
 
 ### set
 
-<img src="image/image-20220203172909491.png" alt="image-20220203172909491" style="zoom:50%;" />
+![](image/image-20220203172909491.png)
 
 # 使用ThreadLocal带来的好处
 
-<img src="image/image-20220203173058203.png" alt="image-20220203173058203" style="zoom:50%;" />
+![](image/image-20220203173058203.png)
 
-<img src="image/image-20220203173142019.png" alt="image-20220203173142019" style="zoom:50%;" />
+![](image/image-20220203173142019.png)
 
 # 原理、源码分析
 
-<img src="image/image-20220203173702321.png" alt="image-20220203173702321" style="zoom:50%;" />
+![](image/image-20220203173702321.png)
 
 # 主要方法介绍
 
-<img src="image/image-20220203202059532.png" alt="image-20220203202059532" style="zoom:50%;" />
+![](image/image-20220203202059532.png)
 
-<img src="image/image-20220203202124674.png" alt="image-20220203202124674" style="zoom:50%;" />
+![](image/image-20220203202124674.png)
 
-<img src="image/image-20220203202135774.png" alt="image-20220203202135774" style="zoom:50%;" />
+![](image/image-20220203202135774.png)
 
 ## T initialValue()
 
-<img src="image/image-20220203201813005.png" alt="image-20220203201813005" style="zoom:50%;" />
+![](image/image-20220203201813005.png)
 
-<img src="image/image-20220203201949080.png" alt="image-20220203201949080" style="zoom:50%;" />
+![](image/image-20220203201949080.png)
 
-<img src="image/image-20220203203013515.png" alt="image-20220203203013515" style="zoom:50%;" />
+![](image/image-20220203203013515.png)
 
 ## get 方法
 
-<img src="image/image-20220203202737868.png" alt="image-20220203202737868" style="zoom:50%;" />
+![](image/image-20220203202737868.png)
 
-<img src="image/image-20220203202848197.png" alt="image-20220203202848197" style="zoom:50%;" />
+![](image/image-20220203202848197.png)
 
 ## ThreadLocalMap类
 
-<img src="image/image-20220203203434584.png" alt="image-20220203203434584" style="zoom:50%;" />
+![](image/image-20220203203434584.png)
 
-<img src="image/image-20220203203536516.png" alt="image-20220203203536516" style="zoom:50%;" />
+![](image/image-20220203203536516.png)
 
 ## 两种使用场景殊途同归
 
-<img src="image/image-20220203203755068.png" alt="image-20220203203755068" style="zoom:50%;" />
+![](image/image-20220203203755068.png)
 
 # 注意点
 
-<img src="image/image-20220203203900726.png" alt="image-20220203203900726" style="zoom:50%;" />
+![](image/image-20220203203900726.png)
 
-<img src="image/image-20220203204351267.png" alt="image-20220203204351267" style="zoom:50%;" />
+![](image/image-20220203204351267.png)
 
-![image-20220203204054719](image/image-20220203204054719.png) <img src="image/image-20220203204517136.png" alt="image-20220203204517136" style="zoom:50%;" />
+![image-20220203204054719](image/image-20220203204054719.png) ![](image/image-20220203204517136.png)
 
-<img src="image/image-20220203204655873.png" alt="image-20220203204655873" style="zoom:50%;" />
+![](image/image-20220203204655873.png)
 
-<img src="image/image-20220203204754898.png" alt="image-20220203204754898" style="zoom:50%;" />
+![](image/image-20220203204754898.png)
 
-<img src="image/image-20220203204920219.png" alt="image-20220203204920219" style="zoom:50%;" />
+![](image/image-20220203204920219.png)
 
-<img src="image/image-20220203205403129.png" alt="image-20220203205403129" style="zoom:50%;" />
+![](image/image-20220203205403129.png)
 
 ```java
 package threadlocal;
@@ -461,8 +461,8 @@ public class ThreadLocalNPE {
 }
 ```
 
-<img src="image/image-20220203205600170.png" alt="image-20220203205600170" style="zoom:50%;" />
+![](image/image-20220203205600170.png)
 
 # 实际应用场景-在Spring中的实例分析
 
-<img src="image/image-20220203205903225.png" alt="image-20220203205903225" style="zoom:50%;" />
+![](image/image-20220203205903225.png)

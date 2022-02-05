@@ -4,7 +4,7 @@
 
 全是对象类型，没有基本类型
 
-<img src="image/image-20220130125459330.png" alt="image-20220130125459330" style="zoom:50%;" />
+![](image/image-20220130125459330.png)
 
 ```groovy
 package variable
@@ -31,9 +31,9 @@ println x_1.class
 
 ## Groovy字符串讲解
 
-<img src="image/image-20220130130907371.png" alt="image-20220130130907371" style="zoom:50%;" />
+![](image/image-20220130130907371.png)
 
-<img src="image/image-20220130132015254.png" alt="image-20220130132015254" style="zoom:50%;" />
+![](image/image-20220130132015254.png)
 
 ```groovy
 package variable
@@ -81,7 +81,7 @@ def str2 = 'Hello'
 
 ## 逻辑控制
 
-<img src="image/image-20220130134651286.png" alt="image-20220130134651286" style="zoom:50%;" />
+![](image/image-20220130134651286.png)
 
 ```groovy
 package variable
@@ -146,15 +146,15 @@ def calculate(int number) {
 
 ## Grovy中闭包基础详解
 
-<img src="image/image-20220130140826054.png" alt="image-20220130140826054" style="zoom:50%;" />
+![](image/image-20220130140826054.png)
 
 ## Grovy中闭包使用详解
 
-<img src="image/image-20220130140838805.png" alt="image-20220130140838805" style="zoom:50%;" />
+![](image/image-20220130140838805.png)
 
 ## Grovy中闭包进阶详解
 
-<img src="image/image-20220130145500078.png" alt="image-20220130145500078" style="zoom:50%;" />
+![](image/image-20220130145500078.png)
 
 # Groovy数据结构
 
