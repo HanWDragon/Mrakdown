@@ -1,0 +1,8 @@
+{
+  "legacyEditor": false,
+  "livePreview": true,
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "newFileLocation": "current",
+  "attachmentFolderPath": "./image"
+}

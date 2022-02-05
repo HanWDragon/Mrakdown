@@ -1,0 +1,149 @@
+# UML图
+
+## UML基本介绍
+
+1. UML——Unified modeling language UML(统一建模语言)，是一种用于软件系统分析和设计的语言工具，它用于帮助软件开发人员进行思考和记录思路的结果 
+2. UML本身是一套符号的规定，就像数学 符号和化学符号一样，这些符号用于描述软件模型中的各个元素和他们之间的 关系，比如类、接口、实现、泛化、依 赖、组合、聚合等，如右图:
+3. 使用UML来建模，常用的工具有 Rational Rose , 也可以使用一些插件来建模
+
+## 如何使用PlantUML
+
+表示笔记
+
+![image-20210316184109067](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184109067.png)
+
+表示类（可以添加属性和方法）
+
+![image-20210316184234679](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184234679.png)
+
+接口
+
+
+
+![image-20210316184406442](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184406442.png)
+
+表示关联
+
+`--`
+
+![image-20210316184455500](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184455500.png)
+
+`-->`
+
+![image-20210316184533577](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184533577.png)
+
+表示聚合
+
+`--o`
+
+![image-20210316184554241](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184554241.png)
+
+表示组合
+
+`--*`
+
+![image-20210316184631530](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184631530.png)
+
+表示依赖(使用)
+
+`..>`
+
+![image-20210316184652095](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184652095.png)
+
+表示泛化(继承)
+
+`--|>`
+
+![image-20210316184709765](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184709765.png)
+
+表示实现
+
+`..|>`
+
+![image-20210316184728549](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184728549.png)
+
+## UML图分类
+
+画UML图与写文章差不多，都是把自己的思想描述给别人看，关键在于思路和条理，
+
+UML图分类:
+
+1) 用例图(usecase)
+ 2) 静态结构图:**类图**、对象图、包图、组件图、部署图
+ 3) 动态行为图:交互图(时序图与协作图)、状态图、活动图
+
+说明:
+
+1. 类图是描述类与类之间的关系的，是UML图中最核心的
+2. 在讲解设计模式时，我们必然会使用类图，为了能够把设计模式学到位，需要先学习类图
+
+## UML类图
+
+1. 用于描述系统中的类(对象)本身的组成和类(对象)之间的各种静态关系。
+2. 类之间的关系:依赖、泛化(继承)、实现、关联、聚合与组合
+
+### 类图—依赖关系(Dependence)
+
+只要是在**类中用到了对方**，那么他们之间就存在依赖关系。如果没有对方，连编绎都通过不了
+
+**代码示例**
+
+```java
+public class PersonServiceBean {
+    private PersonDao personDao;//类
+
+    public void save(Person person) {
+    }
+
+    public IDCard getIDCard(Integer personid) {
+    }
+
+    public void modify() {
+        Department department = new Department();
+    }
+}
+
+public class PersonDao {
+}
+
+public class IDCard {
+}
+
+public class Person {
+}
+
+public class Department {
+}
+```
+
+即就存在以下几种关系就是依赖关系：
+
+1. 类中用到了对方
+2. 如果是类的成员属性
+3. 如果是方法的返回类型 
+4. 是方法接收的参数类型
+5. 方法中使用到
+
+### 类图—泛化关系(generalization)
+
+泛化关系实际上就是继承关系，是依赖关系的特例
+
+### 类图—实现关系(Implementation)
+
+实现关系实际上就是A类实现B接口，是依赖关系的特例
+
+### 类图—关联关系(Association)
+
+关联关系实际上就是类与类之间的联系，他是依赖关系的特例 
+
+关联具有导航性:即双向关系或单向关系
+
+关系具有多重性:如“1”(表示有且仅有一个)，“0...”(表示0个或者多个)， “0，1”(表示0个或者一个)，“n...m”(表示n到 m个都可以),“m...*”(表示至少m 个)
+
+### 类图—聚合关系(Aggregation)
+
+聚合关系(Aggregation)表示的是整体和部分的关系，整体与部分可以分开。聚 合关系是关联关系的特例，所以他具有关联的导航性与多重性。 如:一台电脑由键盘(keyboard)、显示器(monitor)，鼠标等组成;组成电脑的各个 配件是可以从电脑上分离出来的，使用带空心菱形的实线来表示
+
+### 类图—组合关系(Composition)
+
+组合关系:也是整体与部分的关系，但是整体与部分不可以分开

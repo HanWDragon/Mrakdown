@@ -1,0 +1,113 @@
+{
+  "main": {
+    "id": "bf05feccdb1582ef",
+    "type": "split",
+    "children": [
+      {
+        "id": "82d53a8b7053a491",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "后端/Java/JUC/进阶/08以不变应万变（最便捷的并发安全之道）.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "af289e5f0038f5e0",
+    "type": "split",
+    "children": [
+      {
+        "id": "95b316c4bdaca840",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "51c19a84d33453bc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "09b65fe125b6db30",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "572d1fa28c4e90b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "4d6f261dad2e8e72",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1b8bdd0af9161e29",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "后端/Java/JUC/进阶/08以不变应万变（最便捷的并发安全之道）.md",
+                "collapseAll": true,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "28a4dd89a0589a90",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "后端/Java/JUC/进阶/08以不变应万变（最便捷的并发安全之道）.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "82d53a8b7053a491",
+  "lastOpenFiles": [
+    "后端/Java/JUC/进阶/08以不变应万变（最便捷的并发安全之道）.md",
+    "后端/Java/JUC/进阶/05不可不说的“锁”事（种类繁多，如何一一突破）.md",
+    "后端/Java/JUC/进阶/07CAS（不可中断的典范）.md",
+    "后端/Java/JUC/进阶/06atomic包（一刻也不能分割）.md",
+    "后端/Java/JUC/08以不变应万变（最便捷的并发安全之道）.md",
+    "后端/Java/JUC/07CAS（不可中断的典范）.md",
+    "后端/Java/JUC/06atomic包（一刻也不能分割）.md",
+    "后端/Java/JUC/05不可不说的“锁”事（种类繁多，如何一一突破）.md",
+    "后端/Java/JUC/01为什么要学习并发编程.md",
+    "后端/Java/JUC/image/image-20220203141507568.png"
+  ]
+}
