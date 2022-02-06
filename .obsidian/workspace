@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "后端/Java/JUC/进阶/12获取子线程的执行结果(来而不往非礼也).md",
+            "file": "后端/Java/JUC/进阶/03线程池（治理线程的法宝）.md",
             "mode": "source",
             "source": false
           }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "572d1fa28c4e90b7",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "后端/Java/JUC/进阶/12获取子线程的执行结果(来而不往非礼也).md",
+                "file": "后端/Java/JUC/进阶/03线程池（治理线程的法宝）.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "后端/Java/JUC/进阶/12获取子线程的执行结果(来而不往非礼也).md"
+                "file": "后端/Java/JUC/进阶/03线程池（治理线程的法宝）.md"
               }
             }
           }
@@ -100,15 +99,15 @@
   },
   "active": "940359a414a0f1d9",
   "lastOpenFiles": [
+    "后端/Java/JUC/进阶/03线程池（治理线程的法宝）.md",
     "后端/Java/JUC/进阶/12获取子线程的执行结果(来而不往非礼也).md",
+    "大佬的笔记/校招面试/面试扫盲学习/README.md",
+    "后端/Java/JUC/进阶/05不可不说的“锁”事（种类繁多，如何一一突破）.md",
     "后端/Java/JUC/进阶/11AQS（进阶必备，并发灵魂人物）.md",
     "后端/Java/JUC/进阶/10控制并发流程（做好线程之间的协调人）.md",
     "后端/Java/JUC/进阶/09ConcurrentHashMap等并发集合(面试超高频考点).md",
     "后端/Java/JUC/进阶/02鸟瞰Java并发.md",
-    "后端/Java/JUC/进阶/03线程池（治理线程的法宝）.md",
     "后端/Java/JUC/进阶/04ThreadLocal（一次性解决遗留问题）.md",
-    "后端/Java/JUC/进阶/05不可不说的“锁”事（种类繁多，如何一一突破）.md",
-    "后端/Java/JUC/进阶/08以不变应万变（最便捷的并发安全之道）.md",
-    "计算机基础知识/计算机网络/03路由.md"
+    "后端/Java/JUC/进阶/08以不变应万变（最便捷的并发安全之道）.md"
   ]
 }
