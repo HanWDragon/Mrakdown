@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "后端/Java/JUC/基础/03实现多线程的正确姿势（解读官方文档）.md",
+            "file": "后端/Java/JUC/基础/00Synchronized深度解析.md",
             "mode": "source",
             "source": false
           }
@@ -70,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "后端/Java/JUC/基础/03实现多线程的正确姿势（解读官方文档）.md",
+                "file": "后端/Java/JUC/基础/00Synchronized深度解析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,7 +87,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "后端/Java/JUC/基础/03实现多线程的正确姿势（解读官方文档）.md"
+                "file": "后端/Java/JUC/基础/00Synchronized深度解析.md"
               }
             }
           }
@@ -100,15 +100,15 @@
   },
   "active": "940359a414a0f1d9",
   "lastOpenFiles": [
-    "后端/Java/JUC/基础/03实现多线程的正确姿势（解读官方文档）.md",
-    "后端/Java/JUC/基础/未命名.md",
-    "后端/Java/JUC/基础/02线程八大核心纵观全貌.md",
-    "后端/Java/JUC/基础/01为什么学习并发编程.md",
-    "后端/Java/JUC/进阶/01为什么要学习并发编程.md",
-    "后端/Java/JUC/进阶/03线程池（治理线程的法宝）.md",
-    "后端/Java/JUC/进阶/12获取子线程的执行结果(来而不往非礼也).md",
-    "大佬的笔记/校招面试/面试扫盲学习/README.md",
-    "后端/Java/JUC/进阶/05不可不说的“锁”事（种类繁多，如何一一突破）.md",
-    "后端/Java/JUC/进阶/11AQS（进阶必备，并发灵魂人物）.md"
+    "后端/Java/JUC/基础/00Synchronized深度解析.md",
+    "计算机基础知识/计算机网络/13其他协议.md",
+    "计算机基础知识/计算机网络/14补充.md",
+    "计算机基础知识/计算机网络/12HTTP的升级改进.md",
+    "计算机基础知识/计算机网络/11HTTPS.md",
+    "计算机基础知识/计算机网络/04物理层.md",
+    "计算机基础知识/计算机网络/02MAC地址与IP地址.md",
+    "后端/Java/JUC/基础/07趣解Thread和Object类中线程相关方法.md",
+    "后端/Java/JUC/基础/06图解线程生命周期.md",
+    "后端/Java/JUC/基础/05章线程停止、中断之最佳实践.md"
   ]
 }
