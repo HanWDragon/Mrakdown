@@ -4,5 +4,6 @@
   "newLinkFormat": "relative",
   "useMarkdownLinks": true,
   "newFileLocation": "current",
-  "attachmentFolderPath": "./image"
+  "attachmentFolderPath": "./image",
+  "vimMode": false
 }

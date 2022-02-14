@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "后端/JVM/JVM内存与垃圾回收篇/2_类加载子系统/README.md",
+            "file": "后端/网络编程/基础/02Socket网络编程快速入门.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "后端/JVM/JVM内存与垃圾回收篇/2_类加载子系统/README.md",
+                "file": "后端/网络编程/基础/02Socket网络编程快速入门.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "后端/JVM/JVM内存与垃圾回收篇/2_类加载子系统/README.md"
+                "file": "后端/网络编程/基础/02Socket网络编程快速入门.md"
               }
             }
           }
@@ -99,15 +99,15 @@
   },
   "active": "ff24ea6d4728322b",
   "lastOpenFiles": [
-    "后端/JVM/JVM内存与垃圾回收篇/2_类加载子系统/README.md",
-    "后端/网络编程/基础/03解读java.io.md",
-    "后端/网络编程/基础/02网络层的解析与协议.md",
-    "计算机基础知识/计算机网络/04物理层.md",
-    "计算机基础知识/计算机网络/05数据链路层.md",
-    "计算机基础知识/计算机网络/06网络层.md",
-    "计算机基础知识/计算机网络/08应用层.md",
-    "计算机基础知识/计算机网络/12HTTP的升级改进.md",
-    "计算机基础知识/计算机网络/13其他协议.md",
-    "后端/网络编程/基础/01课程导学.md"
+    "后端/网络编程/基础/02Socket网络编程快速入门.md",
+    "计算机基础知识/IO/00系统IO原理(Linux).md",
+    "后端/网络编程/基础/05UDP辅助TCP实现点对点传输案例.md",
+    "后端/JUC/高并发/03高并发处理思路和手段.md",
+    "后端/JUC/高并发/02并发基础.md",
+    "后端/JUC/高并发/01并发与高并发基本概念.md",
+    "后端/Java/Java基础/11.网络编程/day23_网络编程01/笔记/day14-网络编程01.md",
+    "后端/Java/Java基础/4.集合基础/day09_学生管理系统/讲义-md版本/day09 ArrayList集合&学生管理系统.md",
+    "后端/JUC/基础/05章线程停止、中断之最佳实践.md",
+    "后端/Java/Java基础/7.常用API&异常/day15_API02/笔记/day06-常用API02.md"
   ]
 }
