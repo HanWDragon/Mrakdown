@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "后端/网络编程/基础/02Socket网络编程快速入门.md",
+            "file": "后端/Netty/23序列化讲解.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "后端/网络编程/基础/02Socket网络编程快速入门.md",
+                "file": "后端/Netty/23序列化讲解.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "后端/网络编程/基础/02Socket网络编程快速入门.md"
+                "file": "后端/Netty/23序列化讲解.md"
               }
             }
           }
@@ -99,15 +99,15 @@
   },
   "active": "ff24ea6d4728322b",
   "lastOpenFiles": [
-    "后端/网络编程/基础/02Socket网络编程快速入门.md",
-    "计算机基础知识/IO/00系统IO原理(Linux).md",
-    "后端/网络编程/基础/05UDP辅助TCP实现点对点传输案例.md",
-    "后端/JUC/高并发/03高并发处理思路和手段.md",
-    "后端/JUC/高并发/02并发基础.md",
-    "后端/JUC/高并发/01并发与高并发基本概念.md",
-    "后端/Java/Java基础/11.网络编程/day23_网络编程01/笔记/day14-网络编程01.md",
-    "后端/Java/Java基础/4.集合基础/day09_学生管理系统/讲义-md版本/day09 ArrayList集合&学生管理系统.md",
-    "后端/JUC/基础/05章线程停止、中断之最佳实践.md",
-    "后端/Java/Java基础/7.常用API&异常/day15_API02/笔记/day06-常用API02.md"
+    "后端/Netty/23序列化讲解.md",
+    "后端/Netty/22Channel分析.md",
+    "后端/Netty/21Netty重要类与接口源代码剖析.md",
+    "后端/Netty/19NIO模型在Netty中的实现.md",
+    "后端/Netty/20Netty编解码开发技术.md",
+    "后端/Netty/18TCP粘包与拆包分析.md",
+    "后端/Netty/17零拷贝在Netty中的实现与支持.md",
+    "后端/Netty/16Netty同统一通信API.md",
+    "后端/Netty/15可扩展的事件模型.md",
+    "后端/Netty/14Netty大文件传输支持.md"
   ]
 }
