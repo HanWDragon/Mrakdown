@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "ff24ea6d4728322b",
+        "id": "632f0745743ed0ec",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "后端/Netty/23序列化讲解.md",
+            "file": "后端/Mysql/07 怎么给数据上保险.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "572d1fa28c4e90b7",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "后端/Netty/23序列化讲解.md",
+                "file": "后端/Mysql/07 怎么给数据上保险.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,7 +87,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "后端/Netty/23序列化讲解.md"
+                "file": "后端/Mysql/07 怎么给数据上保险.md"
               }
             }
           }
@@ -97,17 +98,17 @@
     "direction": "horizontal",
     "width": 299.1666259765625
   },
-  "active": "ff24ea6d4728322b",
+  "active": "632f0745743ed0ec",
   "lastOpenFiles": [
-    "后端/Netty/23序列化讲解.md",
-    "后端/Netty/22Channel分析.md",
-    "后端/Netty/21Netty重要类与接口源代码剖析.md",
-    "后端/Netty/19NIO模型在Netty中的实现.md",
-    "后端/Netty/20Netty编解码开发技术.md",
-    "后端/Netty/18TCP粘包与拆包分析.md",
-    "后端/Netty/17零拷贝在Netty中的实现与支持.md",
-    "后端/Netty/16Netty同统一通信API.md",
-    "后端/Netty/15可扩展的事件模型.md",
-    "后端/Netty/14Netty大文件传输支持.md"
+    "后端/Mysql/07 怎么给数据上保险.md",
+    "后端/Mysql/06 ORM框架原理.md",
+    "后端/Mysql/05如何处理数据更新.md",
+    "后端/Mysql/02一个SQL语句如何执行.md",
+    "后端/Mysql/03如何建表更符合业务.md",
+    "后端/Mysql/04怎么查询速度更快.md",
+    "后端/Java/未命名.md",
+    "后端/Netty/02EventLoopGroup.md",
+    "计算机基础知识/计算机网络/07传输层.md",
+    "image/TCP04_序号确认号相对.png\".md"
   ]
 }
