@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "后端/Mysql/09 如何解决数据库超大容量不够问题.md",
+            "file": "计算机基础知识/编译原理/02编译原理介绍.md",
             "mode": "source",
             "source": false
           }
@@ -53,7 +53,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "572d1fa28c4e90b7",
@@ -69,7 +70,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "后端/Mysql/09 如何解决数据库超大容量不够问题.md",
+                "file": "计算机基础知识/编译原理/02编译原理介绍.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -86,7 +87,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "后端/Mysql/09 如何解决数据库超大容量不够问题.md"
+                "file": "计算机基础知识/编译原理/02编译原理介绍.md"
               }
             }
           }
@@ -99,15 +100,15 @@
   },
   "active": "632f0745743ed0ec",
   "lastOpenFiles": [
-    "后端/Mysql/09 如何解决数据库超大容量不够问题.md",
-    "后端/JavaNotes/Web.md",
-    "后端/JavaNotes/Tool.md",
-    "后端/JavaNotes/SSM.md",
-    "后端/JavaNotes/Java.md",
-    "后端/JUC/高并发/03高并发处理思路和手段.md",
-    "计算机基础知识/计算机网络/14补充.md",
-    "后端/JUC/进阶/07CAS（不可中断的典范）.md",
-    "后端/JUC/进阶/06atomic包（一刻也不能分割）.md",
-    "后端/JUC/基础/12深入浅出并发编程底层原理.md"
+    "计算机基础知识/编译原理/02编译原理介绍.md",
+    "计算机基础知识/编译原理/01计算机理论指导.md",
+    "后端/Netty/02EventLoopGroup.md",
+    "后端/Netty/01零拷贝.md",
+    "后端/Netty/00JavaIO.md",
+    "计算机基础知识/操作系统/幕客/进程相关.md",
+    "计算机基础知识/操作系统/幕客/储存相关.md",
+    "后端/JavaNotes/DB.md",
+    "后端/Mysql/04怎么查询速度更快.md",
+    "后端/Mysql/05如何处理数据更新.md"
   ]
 }
