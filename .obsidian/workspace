@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "计算机基础知识/编译原理/02编译原理介绍.md",
+            "file": "后端/Java/Java基础/5.Git/day10_Git/笔记/day01Git.md",
             "mode": "source",
             "source": false
           }
@@ -53,8 +53,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "572d1fa28c4e90b7",
@@ -70,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "计算机基础知识/编译原理/02编译原理介绍.md",
+                "file": "后端/Java/Java基础/5.Git/day10_Git/笔记/day01Git.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "计算机基础知识/编译原理/02编译原理介绍.md"
+                "file": "后端/Java/Java基础/5.Git/day10_Git/笔记/day01Git.md"
               }
             }
           }
@@ -100,15 +99,15 @@
   },
   "active": "632f0745743ed0ec",
   "lastOpenFiles": [
+    "后端/Java/Java基础/5.Git/day10_Git/笔记/day01Git.md",
+    "后端/Git/01GIT开发详解.md",
+    "后端/Git/Git.md",
+    "后端/Git/心得.md",
+    "计算机基础知识/编译原理/03词法分析.md",
     "计算机基础知识/编译原理/02编译原理介绍.md",
     "计算机基础知识/编译原理/01计算机理论指导.md",
     "后端/Netty/02EventLoopGroup.md",
     "后端/Netty/01零拷贝.md",
-    "后端/Netty/00JavaIO.md",
-    "计算机基础知识/操作系统/幕客/进程相关.md",
-    "计算机基础知识/操作系统/幕客/储存相关.md",
-    "后端/JavaNotes/DB.md",
-    "后端/Mysql/04怎么查询速度更快.md",
-    "后端/Mysql/05如何处理数据更新.md"
+    "后端/Netty/00JavaIO.md"
   ]
 }
