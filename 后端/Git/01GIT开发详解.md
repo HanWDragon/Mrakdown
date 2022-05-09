@@ -99,3 +99,6 @@ CVS、SVN和Git
 
 ![](image/Pasted%20image%2020220326180555.png)
 
+# Refspec
+
+![](image/Pasted%20image%2020220404210606.png)
