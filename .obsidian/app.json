@@ -6,5 +6,6 @@
   "newFileLocation": "current",
   "attachmentFolderPath": "./image",
   "vimMode": false,
-  "promptDelete": false
+  "promptDelete": false,
+  "communityThemeSortOrder": "download"
 }

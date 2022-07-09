@@ -4,13 +4,13 @@
     "type": "split",
     "children": [
       {
-        "id": "cc7c1f8b0c59e8ce",
+        "id": "034e5187aa34e3ad",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "后端/框架/MyBatis/MyBatis.md",
-            "mode": "preview",
+            "file": "学校/考研/英语/04组动词&情态动词.md",
+            "mode": "source",
             "source": false
           }
         }
@@ -69,9 +69,9 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "后端/框架/MyBatis/MyBatis.md",
+                "file": "学校/考研/英语/04组动词&情态动词.md",
                 "collapseAll": false,
-                "extraContext": false,
+                "extraContext": true,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "后端/框架/MyBatis/MyBatis.md"
+                "file": "学校/考研/英语/04组动词&情态动词.md"
               }
             }
           }
@@ -97,17 +97,17 @@
     "direction": "horizontal",
     "width": 299.1666259765625
   },
-  "active": "cc7c1f8b0c59e8ce",
+  "active": "034e5187aa34e3ad",
   "lastOpenFiles": [
-    "后端/框架/MyBatis/MyBatis.md",
-    "后端/框架/MyBatis/XML文件解析.md",
-    "后端/框架/MyBatis/配置设置详解.md",
-    "后端/JavaNotes/SSM.md",
-    "后端/Java/GUI/01.md",
-    "后端/Java/JavaWeb/05.JDBC/01-JDBC基础/笔记/JDBC-01-授课笔记.md",
-    "后端/JavaNotes/README.md",
-    "后端/JavaNotes/Frame.md",
-    "学校/考研/英语/01英语语法综述.md",
-    "学校/考研/英语/02动词时态.md"
+    "学校/考研/英语/04组动词&情态动词.md",
+    "学校/考研/英语/03独立主格结构.md",
+    "学校/考研/英语/02动词.md",
+    "学校/考研/英语/image/Pasted image 20220709142448.png",
+    "学校/考研/英语/image/Pasted image 20220708023221.png",
+    "学校/考研/英语/image/Pasted image 20220709142411.png",
+    "学校/考研/英语/image/Pasted image 20220708020642.png",
+    "学校/考研/英语/image/Pasted image 20220708020619.png",
+    "学校/考研/英语/image/Pasted image 20220708020642 1.png",
+    "学校/考研/英语/image/Pasted image 20220708020648.png"
   ]
 }
