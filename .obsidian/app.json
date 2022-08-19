@@ -5,7 +5,7 @@
   "useMarkdownLinks": true,
   "newFileLocation": "current",
   "attachmentFolderPath": "./image",
-  "vimMode": false,
-  "promptDelete": false,
+  "vimMode": true,
+  "promptDelete": true,
   "communityThemeSortOrder": "download"
 }

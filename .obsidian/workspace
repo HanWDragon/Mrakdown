@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "笔记/Git/01GIT开发详解.md",
+            "file": "学校/考研/英语/06从句.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "笔记/Git/01GIT开发详解.md",
+                "file": "学校/考研/英语/06从句.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/Git/01GIT开发详解.md"
+                "file": "学校/考研/英语/06从句.md"
               }
             }
           }
@@ -99,15 +99,15 @@
   },
   "active": "034e5187aa34e3ad",
   "lastOpenFiles": [
-    "笔记/Git/01GIT开发详解.md",
-    "学校/考研/英语/04组动词&情态动词.md",
-    "学校/考研/英语/03独立主格结构.md",
     "学校/考研/英语/02动词.md",
-    "学校/考研/英语/image/Pasted image 20220709142448.png",
-    "学校/考研/英语/image/Pasted image 20220708023221.png",
-    "学校/考研/英语/image/Pasted image 20220709142411.png",
-    "学校/考研/英语/image/Pasted image 20220708020642.png",
-    "学校/考研/英语/image/Pasted image 20220708020619.png",
-    "学校/考研/英语/image/Pasted image 20220708020642 1.png"
+    "学校/考研/英语/06从句.md",
+    "学校/考研/英语/03独立主格结构.md",
+    "学校/考研/英语/01英语语法综述.md",
+    "学校/考研/英语/04助动词&情态动词.md",
+    "学校/考研/英语/05 使役动词.md",
+    "笔记/框架/Redis/Redis.md",
+    "笔记/网络安全/01 靶场的搭建.md",
+    "学校/考研/英语/image/Pasted image 20220811020028.png",
+    "学校/考研/英语/image/Pasted image 20220809164555.png"
   ]
 }
