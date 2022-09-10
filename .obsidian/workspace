@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "笔记/DDD/2-01智慧零售案例项目介绍.md",
+            "file": "学校/考研/英语/06从句.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "笔记/DDD/2-01智慧零售案例项目介绍.md",
+                "file": "学校/考研/英语/06从句.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -86,7 +86,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/DDD/2-01智慧零售案例项目介绍.md"
+                "file": "学校/考研/英语/06从句.md"
               }
             }
           }
@@ -99,15 +99,15 @@
   },
   "active": "e5ff27041dd8b983",
   "lastOpenFiles": [
-    "笔记/DDD/1-04DDD的过去、现在和未来.md",
-    "笔记/DDD/1-03面向对象和敏捷和DDD的区别和联系.md",
-    "笔记/DDD/2-01智慧零售案例项目介绍.md",
-    "笔记/DDD/1-01课程导学.md",
-    "笔记/DDD/1-02DDD的核心思想和解决的痛点问题.md",
-    "image/Pasted image 20220902140113.png.md",
-    "笔记/DDD/image/blisit.jpg",
-    "笔记/DDD/image/Pasted image 20220902140024.png",
-    "笔记/DDD/image/Pasted image 20220902135933.png",
-    "笔记/DDD/image/Pasted image 20220902140113.png"
+    "学校/考研/英语/image/Pasted image 20220911005744.png",
+    "学校/考研/英语/image/Pasted image 20220911004858.png",
+    "学校/考研/英语/image/Pasted image 20220911005956.png",
+    "学校/考研/英语/06从句.md",
+    "笔记/DDD/2-04分解问题：领域划分和子域.md",
+    "笔记/DDD/2-03如何描述模型？从用户故事到通用语言.md",
+    "笔记/DDD/SmartRM系统整体战略设计.md",
+    "笔记/DDD/2-02建模和设计的整体流程.md",
+    "大佬的笔记/K8S/3_使用kubeadm方式搭建K8S集群/README.md",
+    "大佬的笔记/K8S/README.md"
   ]
 }
