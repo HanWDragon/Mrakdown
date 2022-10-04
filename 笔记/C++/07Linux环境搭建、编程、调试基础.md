@@ -30,7 +30,14 @@
 
 ![](image/Pasted%20image%2020220915090011.png)
 
+## Makefile的格式
+
+ ![](image/Pasted%20image%2020220924110151.png)
+
 ## Makefile的扩展用法
 
 ![](image/Pasted%20image%2020220915081006.png)
 
+## Makefile的自动生成和部署
+
+![](image/Pasted%20image%2020220924132155.png)

@@ -7,5 +7,11 @@
   "attachmentFolderPath": "./image",
   "vimMode": true,
   "promptDelete": false,
-  "communityThemeSortOrder": "download"
+  "communityThemeSortOrder": "download",
+  "pdfExportSettings": {
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  }
 }
