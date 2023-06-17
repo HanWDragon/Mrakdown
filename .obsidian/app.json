@@ -6,7 +6,7 @@
   "newFileLocation": "current",
   "attachmentFolderPath": "./image",
   "vimMode": true,
-  "promptDelete": false,
+  "promptDelete": true,
   "communityThemeSortOrder": "download",
   "pdfExportSettings": {
     "pageSize": "A4",
