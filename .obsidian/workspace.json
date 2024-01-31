@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "78874181367338d9",
+        "id": "9538c50001b5ccf3",
         "type": "tabs",
         "children": [
           {
-            "id": "ec0614c6af4a7a42",
+            "id": "74105a5b304214d8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "计算机基础知识/计算机网络/05数据链路层.md",
+                "file": "笔记/Java/JavaWeb/05.JDBC/01-JDBC基础/笔记/JDBC-01-授课笔记.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 339.5023880004883
+    "width": 618.5
   },
   "right": {
     "id": "572d1fa28c4e90b7",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "计算机基础知识/计算机网络/05数据链路层.md",
+                "file": "笔记/Java/JavaWeb/05.JDBC/01-JDBC基础/笔记/JDBC-01-授课笔记.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,19 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "计算机基础知识/计算机网络/05数据链路层.md"
+                "file": "笔记/Java/JavaWeb/05.JDBC/01-JDBC基础/笔记/JDBC-01-授课笔记.md"
+              }
+            }
+          },
+          {
+            "id": "fe682efd5bcadbaf",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           }
@@ -122,42 +134,59 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "ec0614c6af4a7a42",
+  "active": "51c19a84d33453bc",
   "lastOpenFiles": [
-    "计算机基础知识/计算机网络/04物理层.md",
-    "计算机基础知识/计算机网络/02MAC地址与IP地址.md",
-    "计算机基础知识/计算机网络/01基本概念.md",
-    "计算机基础知识/计算机网络/03路由.md",
-    "笔记/系统设计/07 分布式文件系统.md",
-    "笔记/系统设计/10 聊天系统.md",
-    "笔记/系统设计/12 基于地理位置的服务.md",
-    "笔记/系统设计/03 从用户系统设计中学习数据库与缓存.md",
-    "笔记/网络编程/基础/05UDP辅助TCP实现点对点传输案例.md",
-    "笔记/网络编程/基础/01课程导学.md",
-    "笔记/网络编程/基础/03Socket UDP快速入门.md",
-    "笔记/网络编程/基础/02Socket网络编程快速入门.md",
+    "笔记/Docker",
+    "笔记/C/01 C语言基础.md",
+    "笔记/C++/05  高级语法.md",
+    "笔记/C++/04 指针和引用.md",
+    "笔记/C++/03 基础容器.md",
+    "笔记/C++/02 从C语言的陷阱到C++的改进.md",
+    "笔记/C++/01 基础语法.md",
+    "笔记/C++/06 STL.md",
+    "笔记/C.zip",
+    "笔记/C/00 前言.md",
+    "未命名.canvas",
+    "学校/毕业设计/前台和后台搭建.md",
+    "学校/毕业设计/毕业项目简述.md",
+    "学校/毕业设计/image/Pasted image 20231230142155.png",
+    "学校/毕业设计/image/Pasted image 20231230130646.png",
+    "笔记/前端/布局/01 布局中的尺寸和位置.md",
+    "笔记/前端/布局/03grid布局.md",
+    "笔记/前端/布局/04移动端适配布局.md",
+    "笔记/前端/布局/05响应式布局.md",
+    "笔记/JUC/进阶/04ThreadLocal（一次性解决遗留问题）.md",
+    "笔记/JUC/进阶/02鸟瞰Java并发.md",
+    "笔记/JUC/基础/11多线程的八大核心.md",
+    "笔记/JUC/基础/07趣解Thread和Object类中线程相关方法.md",
+    "笔记/JUC/基础/08一网打尽线程属性.md",
+    "笔记/JUC/基础/05章线程停止、中断之最佳实践.md",
+    "笔记/JUC/基础/03实现多线程的正确姿势（解读官方文档）.md",
+    "笔记/JUC/基础/01为什么学习并发编程.md",
+    "计算机基础知识/算法与数据结构/算法总结/进阶/哈希函数和哈希表.md",
+    "计算机基础知识/算法与数据结构/算法总结/进阶/滑动窗口 单调栈结构.md",
+    "计算机基础知识/算法与数据结构/算法总结/基础/前缀树和贪心算法.md",
+    "未命名 2.canvas",
+    "未命名 1.canvas",
+    "笔记/前端/布局/image/Pasted image 20230912151759.png",
+    "笔记/前端/布局/image/Pasted image 20230911222911.png",
+    "笔记/前端/布局/image/Pasted image 20230911221749.png",
+    "笔记/前端/布局/image/Pasted image 20230911221207.png",
+    "笔记/前端/布局/image/Pasted image 20230911221151.png",
+    "笔记/前端/布局/image/Pasted image 20230911212335.png",
+    "笔记/前端/布局/image/Pasted image 20230911211958.png",
+    "笔记/前端/布局/image/Pasted image 20230911201348.png",
+    "笔记/前端/布局/image",
+    "笔记/前端/布局",
+    "笔记/前端",
+    "学校/毕业设计/数据库表设计.canvas",
+    "学校/毕业设计/image",
+    "学校/毕业设计",
     "未命名 7.canvas",
     "未命名 8.canvas",
     "未命名 6.canvas",
     "未命名 5.canvas",
     "未命名 4.canvas",
-    "未命名 3.canvas",
-    "未命名 2.canvas",
-    "未命名 1.canvas",
-    "未命名.canvas",
-    "笔记/设计模式/01Singleton-单例模式.md",
-    "笔记/C/01 C语言基础.md",
-    "笔记/C++/05  高级语法.md",
-    "笔记/JUC/基础/12深入浅出并发编程底层原理.md",
-    "笔记/JUC/基础/11多线程的八大核心.md",
-    "笔记/JUC/基础/10章 线程安全(工作常用).md",
-    "笔记/JUC/基础/09线程异常处理知多少？.md",
-    "笔记/JUC/基础/06图解线程生命周期.md",
-    "笔记/JUC/基础/04开启多线程启动的世界.md",
-    "笔记/JUC/基础/08一网打尽线程属性.md",
-    "笔记/JUC/基础/07趣解Thread和Object类中线程相关方法.md",
-    "笔记/JUC/基础/05章线程停止、中断之最佳实践.md",
-    "计算机基础知识/计算机网络/09HTTP.md",
-    "计算机基础知识/随笔/需要了解的底层知识.md"
+    "未命名 3.canvas"
   ]
 }

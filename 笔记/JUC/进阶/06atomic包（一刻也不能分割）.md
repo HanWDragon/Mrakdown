@@ -8,7 +8,7 @@
 
 ![](image/Pasted%20image%2020220205002416.png)
 
-# Atomic*基本类型原子类，已AtomicInteger为例子
+# Atomic基本类型原子类，已AtomicInteger为例子
 
 ![](image/Pasted%20image%2020220205002600.png)
 
@@ -63,7 +63,7 @@ public class AtomicIntegerDemo1 implements Runnable {
 
 ```
 
-# Atomic*Array数组类型原子类
+# AtomicArray数组类型原子类
 
 ```java
 package atomic;
@@ -142,7 +142,7 @@ class Incrementer implements Runnable {
 
 ```
 
-# Atomic*Reference引用类型原子类
+# AtomicReference引用类型原子类
 
 ![](image/Pasted%20image%2020220205005133.png)
 
