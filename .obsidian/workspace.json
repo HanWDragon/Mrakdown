@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/Java/JavaWeb/05.JDBC/01-JDBC基础/笔记/JDBC-01-授课笔记.md",
+                "file": "笔记/Docker/01 虚拟化分类和容器.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 618.5
+    "width": 282.5,
+    "collapsed": true
   },
   "right": {
     "id": "572d1fa28c4e90b7",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "笔记/Java/JavaWeb/05.JDBC/01-JDBC基础/笔记/JDBC-01-授课笔记.md",
+                "file": "笔记/Docker/01 虚拟化分类和容器.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/Java/JavaWeb/05.JDBC/01-JDBC基础/笔记/JDBC-01-授课笔记.md"
+                "file": "笔记/Docker/01 虚拟化分类和容器.md"
               }
             }
           },
@@ -134,8 +135,10 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "51c19a84d33453bc",
+  "active": "74105a5b304214d8",
   "lastOpenFiles": [
+    "笔记/Java/JavaWeb/05.JDBC/01-JDBC基础/笔记/JDBC-01-授课笔记.md",
+    "笔记/Docker/01 虚拟化分类和容器.md",
     "笔记/Docker",
     "笔记/C/01 C语言基础.md",
     "笔记/C++/05  高级语法.md",
@@ -165,7 +168,6 @@
     "笔记/JUC/基础/01为什么学习并发编程.md",
     "计算机基础知识/算法与数据结构/算法总结/进阶/哈希函数和哈希表.md",
     "计算机基础知识/算法与数据结构/算法总结/进阶/滑动窗口 单调栈结构.md",
-    "计算机基础知识/算法与数据结构/算法总结/基础/前缀树和贪心算法.md",
     "未命名 2.canvas",
     "未命名 1.canvas",
     "笔记/前端/布局/image/Pasted image 20230912151759.png",

@@ -1,10 +1,11 @@
 {
-  "baseFontSize": 30,
+  "baseFontSize": 17,
   "translucency": true,
   "cssTheme": "Things",
   "theme": "system",
   "accentColor": "",
   "interfaceFontFamily": "SF Mono",
   "monospaceFontFamily": "SF Mono",
-  "textFontFamily": "SF Pro"
+  "textFontFamily": "SF Pro",
+  "baseFontSizeAction": false
 }
