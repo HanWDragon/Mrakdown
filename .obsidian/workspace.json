@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/异常与调优/04 Spring 工程脚手架.md",
-                "mode": "source",
+                "file": "笔记/Socket 编程/基础/03Socket UDP快速入门.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04 Spring 工程脚手架"
+              "title": "03Socket UDP快速入门"
             }
           }
         ]
@@ -111,10 +111,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/异常与调优/04 Spring 工程脚手架.md"
+                "file": "笔记/Socket 编程/基础/03Socket UDP快速入门.md"
               },
               "icon": "lucide-list",
-              "title": "04 Spring 工程脚手架 的大纲"
+              "title": "03Socket UDP快速入门 的大纲"
             }
           },
           {
@@ -149,19 +149,32 @@
   },
   "active": "2b994ac5b276ecf5",
   "lastOpenFiles": [
+    "笔记/Socket 编程/基础/05UDP辅助TCP实现点对点传输案例.md",
+    "笔记/Socket 编程/基础/04Socket TCP快速入门.md",
+    "笔记/Socket 编程/基础/03Socket UDP快速入门.md",
+    "笔记/Socket 编程/基础/02Socket网络编程快速入门.md",
+    "笔记/Socket 编程/基础/01课程导学.md",
+    "笔记/Java IO/04 AIO.md",
+    "笔记/Java IO/03 NIO.md",
+    "笔记/Java IO/02 BIO.md",
+    "笔记/Java IO/01 Java io 基本概念.md",
+    "笔记/Java IO/00 介绍.md",
+    "笔记/Java IO/image/Pasted image 20241219054102.png",
+    "笔记/Java IO/image/Pasted image 20241219053105.png",
+    "笔记/Java IO/image/Pasted image 20241219051701.png",
+    "笔记/Java IO/image/Pasted image 20241219051459.png",
+    "笔记/Java IO/image/bio-chatroom-sequence-diagram.png",
+    "笔记/Java IO/image/Pasted image 20241218123640.png",
+    "笔记/Java IO/image/Pasted image 20241218115456.png",
+    "笔记/Java IO/image/Pasted image 20241218114734.png",
+    "笔记/Java IO/image/Pasted image 20241218114410.png",
+    "笔记/Java IO/image/Pasted image 20241218105636.png",
+    "笔记/Java IO/image",
+    "笔记/Java/JavaWeb/03.JavaWeb核心/04-Cookie&Session&JSP/笔记/Cookie&SessionJsp-授课.md",
+    "笔记/异常与调优/04 Spring 工程编写和调优.md",
+    "笔记/Java IO",
     "笔记/异常与调优/03 调试.md",
-    "笔记/异常与调优/04 Spring 工程脚手架.md",
     "未命名.canvas",
-    "笔记/异常与调优/image/Pasted image 20241216213722.png",
-    "笔记/异常与调优/image/Pasted image 20241216213712.png",
-    "笔记/异常与调优/image/Pasted image 20241216213654.png",
-    "笔记/异常与调优/image/Pasted image 20241216213550.png",
-    "笔记/异常与调优/image/Pasted image 20241216213325.png",
-    "笔记/异常与调优/image/Pasted image 20241216213312.png",
-    "笔记/异常与调优/image/Pasted image 20241216213304.png",
-    "笔记/异常与调优/image/Pasted image 20241216213237.png",
-    "笔记/异常与调优/image/Pasted image 20241216213205.png",
-    "笔记/异常与调优/image/Pasted image 20241216212954.png",
     "笔记/异常与调优/02 日志.md",
     "笔记/异常与调优/01 Java 异常.md",
     "笔记/常见错误/02 计算、集合、接口.md",
@@ -175,18 +188,7 @@
     "笔记/C++/01 基础语法.md",
     "计算机基础知识/随笔/需要了解的底层知识.md",
     "学校/毕业设计/毕业项目简述.md",
-    "笔记/JVM/JVM内存与垃圾回收篇/9_方法区/README.md",
-    "笔记/Java/Java基础/9.IO流/day20_IO流02/笔记/day11IO流02.md",
-    "笔记/异常与调优/00 涉及内容.md",
     "笔记/异常与调优/image",
-    "笔记/常见错误/09 Redis.md",
-    "笔记/常见错误/08 MySQL.md",
-    "笔记/Mysql/优化/05查询优化.md",
-    "笔记/Mysql/优化/04通过索引进行优化.md",
-    "笔记/Mysql/优化/03执行计划.md",
-    "笔记/Mysql/优化/02schema与数据类型优化.md",
-    "笔记/Mysql/优化/01性能监控.md",
-    "笔记/数据库选型/01 社交新零售业务.md",
     "笔记/常见错误/image 1",
     "笔记/框架/Nginx/课件/Nginx_day03.pdf",
     "笔记/常见错误/未命名",
@@ -194,8 +196,6 @@
     "笔记/常见错误/image",
     "笔记/如何选择数据存储方案/01 社交新零售业务.pdf",
     "笔记/常见错误",
-    "笔记/提示词工程/image",
-    "笔记/提示词工程",
     "未命名 2.canvas",
     "未命名 1.canvas",
     "学校/毕业设计/数据库表设计.canvas",
