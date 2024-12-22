@@ -8,59 +8,31 @@
 
 ## 如何使用PlantUML
 
-表示笔记
-
-![image-20210316184109067](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184109067.png)
-
-表示类（可以添加属性和方法）
-
-![image-20210316184234679](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184234679.png)
-
-接口
-
-
-
-![image-20210316184406442](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184406442.png)
-
 表示关联
 
 `--`
 
-![image-20210316184455500](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184455500.png)
-
 `-->`
-
-![image-20210316184533577](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184533577.png)
 
 表示聚合
 
 `--o`
 
-![image-20210316184554241](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184554241.png)
-
 表示组合
 
 `--*`
-
-![image-20210316184631530](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184631530.png)
 
 表示依赖(使用)
 
 `..>`
 
-![image-20210316184652095](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184652095.png)
-
 表示泛化(继承)
 
 `--|>`
 
-![image-20210316184709765](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184709765.png)
-
 表示实现
 
 `..|>`
-
-![image-20210316184728549](/Users/hwl/Library/Application Support/typora-user-images/image-20210316184728549.png)
 
 ## UML图分类
 
