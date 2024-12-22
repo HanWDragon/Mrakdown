@@ -1,4 +1,4 @@
-# TCP 是什么
+ # TCP 是什么
 
 ![](image/Pasted%20image%2020220212002131.png)
 
@@ -28,29 +28,54 @@
 
 # Socket与进程关系
 
+- Socket 是无法管理到像 3 次握手，4 次挥手等细节，这些都是 OS 在背后替我们完成的，程序员是通过 Socket 提供的系统调用来完成逻辑
+
 ![](image/Pasted%20image%2020220212004633.png)
 
 # TCP连接可靠性
 
 ## 三次握手
 
+TCP三次握手是建立可靠连接的过程，分为三个步骤：
+
+1. SYN（同步序列号）：
+    - 发送方（Sender）发送一个SYN包到接收方（Receiver），并随机选择一个初始序列号`x`。
+
+2. SYN-ACK（同步确认）：
+    - 接收方收到SYN包后，回复一个SYN-ACK包。这个包包含接收方的初始序列号`y`，并对发送方的序列号`x`进行确认（即`x+1`）。
+
+3. ACK（确认）：
+    - 发送方收到SYN-ACK包后，发送一个ACK包确认接收方的序列号`y`（即`y+1`），并可以开始传输应用数据。
+
+- 为什么能确保可靠性：
+	- 确认机制： 每一步都需要对方的确认，确保双方都能收到并处理对方的消息。
+	- 序列号同步： 三次握手过程中，双方交换初始序列号，确保数据传输的有序性和完整性。
+	- 防止重复连接： 避免旧的重复连接请求（延迟的SYN）意外建立连接。 
+
 ![](image/Pasted%20image%2020220212005217.png)
 
 ## 数据随机的必要性
+
+- 为什么要数据随机，就像打电话表明自己的唯一身份标识，都是喂喂喂无法知道是谁的请求
 
 ![](image/Pasted%20image%2020220212005426.png)
 
 ## 四次挥手
 
+- 和三次握手几乎一样
+- SYN 是发起连接，ACK 是回送命令，FIN 是断开链接的命令 
+- 在 FIN-WAIT-1 客户端就断开了输出流，现在客户端就处于一个半双工的状态，只能接收消息，发送消息会出现异常
+- 四次挥手主要保证全双工连接的断开
+
 ![](image/Pasted%20image%2020220212005501.png)
 
  # TCP传输可靠性
-
+  
  ![](image/Pasted%20image%2020220212005735.png)
 
  ![](image/Pasted%20image%2020220212005752.png)
 
- # 案例实操
+ # 需要实现的功能
 
  ## TCP传输初始化配置
 
@@ -58,6 +83,8 @@
   
 ```java
 
+private static Socket createSocket() throws IOException {
+        /*
         // 无代理模式，等效于空构造函数
         Socket socket = new Socket(Proxy.NO_PROXY);
 
@@ -75,6 +102,14 @@
         // 新建一个套接字，并且直接链接到本地20000的服务器上，并且绑定到本地20001端口上
         socket = new Socket("localhost", PORT, Inet4Address.getLocalHost(), LOCAL_PORT);
         socket = new Socket(Inet4Address.getLocalHost(), PORT, Inet4Address.getLocalHost(), LOCAL_PORT);
+        */
+
+        Socket socket = new Socket();
+        // 绑定到本地20001端口
+        socket.bind(new InetSocketAddress(Inet4Address.getLocalHost(), LOCAL_PORT));
+
+        return socket;
+    }
 
 ```
 
@@ -86,7 +121,7 @@ private static void initSocket(Socket socket) throws SocketException {
         // 是否复用未完全关闭的Socket地址，对于指定bind操作后的套接字有效
         socket.setReuseAddress(true);
 
-        // 是否开启Nagle算法
+        // 是否关闭Nagle算法
         socket.setTcpNoDelay(true);
 
         // 是否需要在长时无数据响应时发送确认数据（类似心跳包），时间大约为2小时
@@ -110,19 +145,32 @@ private static void initSocket(Socket socket) throws SocketException {
     }
 ```
 
+### Nagle 算法介绍
+ 
+- Nagle 算法是一种用于减少网络拥塞的机制。它通过将小的数据包合并成一个更大的数据包来减少网络上的数据包数量。
+- 这对某些应用程序有利，因为它能减少网络负载和提高传输效率。
+
+- `setTcpNoDelay(true)` 的作用：
+    - 当你设置 `socket.setTcpNoDelay(true)`，是禁用了 Nagle 算法。这意味着数据将会立即发送，而不是等待积累到一定大小再发送。
+    - 适用于需要低延迟的应用程序，例如实时游戏或金融交易系统等，这些系统需要快速响应，而不是等待数据缓冲。
+
+- 何时使用：
+    - 如果你的应用程序非常注重低延迟和实时性，通常会禁用 Nagle 算法。
+    - 如果应用程序可以容忍一些延迟，并且网络带宽有限，可能不需要禁用它。
+
+- 使用 `setTcpNoDelay(true)` 可以获得更快的数据传输速度，但可能会增加网络上的数据包数量，影响网络性能。选择是否使用它取决于你的具体应用需求。
+
 ## 客户端与服务器交互
 
 ![](image/Pasted%20image%2020220212010159.png)
 
-## 基础类型数据传输
+ ## 基础类型数据传输
 
 ![](image/Pasted%20image%2020220212121115.png)
 
+# 代码实现
 
-
-## 代码演示
-
-### 客户端
+## 客户端
 
 ```java
 import java.io.IOException;
@@ -279,7 +327,7 @@ public class Client {
 
 ```
 
-### 服务端
+## 服务端
 
 ```java
 import java.io.IOException;
@@ -433,7 +481,7 @@ public class Server {
 
 ```
 
-### 工具类
+## 工具类
 
 ```java
 public class Tools {
