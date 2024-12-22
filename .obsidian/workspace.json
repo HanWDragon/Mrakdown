@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/面试/Spring 篇.md",
+                "file": "笔记/Socket 编程/07 服务器传输优化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Spring 篇"
+              "title": "07 服务器传输优化"
             }
           }
         ]
@@ -111,10 +111,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/面试/Spring 篇.md"
+                "file": "笔记/Socket 编程/07 服务器传输优化.md"
               },
               "icon": "lucide-list",
-              "title": "Spring 篇 的大纲"
+              "title": "07 服务器传输优化 的大纲"
             }
           },
           {
@@ -149,14 +149,34 @@
   },
   "active": "91b1d596e90876b4",
   "lastOpenFiles": [
+    "笔记/Socket 编程/image/Pasted image 20241222165201.png",
+    "笔记/Socket 编程/image/Pasted image 20241222162342.png",
+    "笔记/Socket 编程/image/Pasted image 20241222162144.png",
+    "笔记/Socket 编程/image/Pasted image 20241222162015.png",
+    "笔记/Socket 编程/image/Pasted image 20241222161732.png",
+    "笔记/Socket 编程/image/Pasted image 20241222161145.png",
+    "笔记/Socket 编程/image/Pasted image 20241222160638.png",
+    "笔记/Socket 编程/image/Pasted image 20241222160539.png",
+    "笔记/Socket 编程/image/Pasted image 20241222160034.png",
+    "笔记/Socket 编程/image/Pasted image 20241222155915.png",
+    "笔记/Socket 编程/image/Pasted image 20241222155807.png",
+    "笔记/Java IO/04 AIO.md",
+    "笔记/Socket 编程/07 服务器传输优化.md",
+    "笔记/Socket 编程/05 UDP辅助TCP实现点对点传输案例.md",
+    "笔记/Socket 编程/04 Socket TCP快速入门.md",
+    "笔记/Socket 编程/03 Socket UDP快速入门.md",
+    "笔记/Socket 编程/02 Socket网络编程快速入门.md",
+    "笔记/Socket 编程/01 课程导学.md",
+    "笔记/Socket 编程/06 简单聊天室实现和问题.md",
+    "笔记/Java IO/03 NIO.md",
+    "笔记/Java IO/02 BIO.md",
+    "笔记/Java IO/01 Java io 基本概念.md",
+    "笔记/面试/Spring 篇.md",
     "笔记/UML/UML图.md",
     "笔记/网络安全/01 靶场的搭建.md",
     "笔记/Netty/01零拷贝.md",
     "笔记/Netty/02EventLoopGroup.md",
     "笔记/Netty/00JavaIO.md",
-    "笔记/Socket 编程/01课程导学.md",
-    "笔记/Socket 编程/03Socket UDP快速入门.md",
-    "笔记/Socket 编程/05UDP辅助TCP实现点对点传输案例.md",
     "笔记/常见错误/08 MySQL.md",
     "笔记/常见错误/04 线程安全.md",
     "笔记/常见错误/03 泛型、反射、编译优化.md",
@@ -165,26 +185,6 @@
     "笔记/JUC/进阶/10控制并发流程（做好线程之间的协调人）.md",
     "笔记/JUC/进阶/06atomic包（一刻也不能分割）.md",
     "笔记/JUC/进阶/05不可不说的“锁”事（种类繁多，如何一一突破）.md",
-    "笔记/JUC/进阶/04ThreadLocal（一次性解决遗留问题）.md",
-    "笔记/JUC/进阶/03线程池（治理线程的法宝）.md",
-    "笔记/JUC/进阶/02鸟瞰Java并发.md",
-    "笔记/JUC/进阶/01为什么要学习并发编程.md",
-    "笔记/JUC/基础/11多线程的八大核心.md",
-    "笔记/Socket 编程/image/Pasted image 20241221105022.png",
-    "笔记/Socket 编程/04Socket TCP快速入门.md",
-    "笔记/Java IO/03 NIO.md",
-    "笔记/Java IO/01 Java io 基本概念.md",
-    "笔记/Socket 编程/02Socket网络编程快速入门.md",
-    "笔记/Java IO/04 AIO.md",
-    "笔记/Java IO/image/Pasted image 20241219054102.png",
-    "笔记/Java IO/image/Pasted image 20241219053105.png",
-    "笔记/Java IO/image/Pasted image 20241219051701.png",
-    "笔记/Java IO/image/Pasted image 20241219051459.png",
-    "笔记/Java IO/image/bio-chatroom-sequence-diagram.png",
-    "笔记/Java IO/image/Pasted image 20241218123640.png",
-    "笔记/Java IO/image/Pasted image 20241218115456.png",
-    "笔记/Java IO/image/Pasted image 20241218114734.png",
-    "笔记/Java IO/image/Pasted image 20241218114410.png",
     "笔记/Java IO/image",
     "笔记/Java IO",
     "未命名.canvas",
