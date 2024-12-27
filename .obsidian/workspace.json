@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "83e3878ff6852954",
+        "id": "4962ae2de1fade47",
         "type": "tabs",
         "children": [
           {
-            "id": "91b1d596e90876b4",
+            "id": "2b994ac5b276ecf5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/Socket 编程/07 服务器传输优化.md",
+                "file": "笔记/设计模式/04 结构型模式.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "07 服务器传输优化"
+              "title": "04 结构型模式"
             }
           }
         ]
@@ -77,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 231.5
+    "width": 229.5
   },
   "right": {
     "id": "572d1fa28c4e90b7",
@@ -111,10 +111,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/Socket 编程/07 服务器传输优化.md"
+                "file": "笔记/设计模式/04 结构型模式.md"
               },
               "icon": "lucide-list",
-              "title": "07 服务器传输优化 的大纲"
+              "title": "04 结构型模式 的大纲"
             }
           },
           {
@@ -147,44 +147,47 @@
       "markdown-importer:打开 Markdown 格式转换器": false
     }
   },
-  "active": "91b1d596e90876b4",
+  "active": "2b994ac5b276ecf5",
   "lastOpenFiles": [
-    "笔记/Socket 编程/image/Pasted image 20241223105604.png",
-    "笔记/Socket 编程/image/Pasted image 20241222165201.png",
-    "笔记/Socket 编程/image/Pasted image 20241222162342.png",
-    "笔记/Socket 编程/image/Pasted image 20241222162144.png",
-    "笔记/Socket 编程/image/Pasted image 20241222162015.png",
-    "笔记/Socket 编程/image/Pasted image 20241222161732.png",
-    "笔记/Socket 编程/image/Pasted image 20241222161145.png",
-    "笔记/Socket 编程/image/Pasted image 20241222160638.png",
-    "笔记/Socket 编程/image/Pasted image 20241222160539.png",
-    "笔记/Socket 编程/image/Pasted image 20241222160034.png",
-    "笔记/Socket 编程/image/Pasted image 20241222155915.png",
-    "笔记/Java IO/04 AIO.md",
+    "笔记/设计模式/image/Pasted image 20241227221739.png",
+    "笔记/设计模式/03 创建型设计模式.md",
+    "笔记/设计模式/04 结构型模式.md",
+    "笔记/设计模式/image/Pasted image 20241227215956.png",
+    "笔记/设计模式/image/Pasted image 20241227215918.png",
+    "笔记/设计模式/image/Pasted image 20241227215907.png",
+    "笔记/设计模式/image/Pasted image 20241227215848.png",
+    "笔记/设计模式/image/Pasted image 20241227215822.png",
+    "笔记/设计模式/image/Pasted image 20241227215801.png",
+    "笔记/设计模式/00 介绍.md",
+    "笔记/常见错误/03 泛型、反射、编译优化.md",
+    "笔记/常见错误/02 计算、集合、接口.md",
+    "笔记/常见错误/01 空指针和异常.md",
+    "笔记/设计模式/image/Pasted image 20241227212628.png",
+    "笔记/设计模式/image/Pasted image 20241227212528.png",
+    "笔记/设计模式/image/Pasted image 20241227212442.png",
+    "笔记/设计模式/image/Pasted image 20241227212428.png",
+    "笔记/设计模式/02 软件设计原则.md",
+    "笔记/设计模式/01 UML 入门.md",
+    "笔记/JavaNotes/Prog.md",
+    "笔记/JavaNotes/Java.md",
+    "笔记/Java/Java基础/10.多线程/day22_多线程02/笔记/day12 多线程02.md",
+    "计算机基础知识/随笔/需要了解的底层知识.md",
+    "笔记/JUC/基础/10章 线程安全(工作常用).md",
+    "笔记/JUC/进阶/07CAS（不可中断的典范）.md",
+    "笔记/JUC/基础/07趣解Thread和Object类中线程相关方法.md",
+    "笔记/JUC/进阶/06atomic包（一刻也不能分割）.md",
+    "笔记/JUC/基础/05章线程停止、中断之最佳实践.md",
+    "笔记/C/01 C语言基础.md",
+    "笔记/设计模式/image",
     "笔记/Socket 编程/07 服务器传输优化.md",
+    "笔记/设计模式",
+    "笔记/Socket 编程/基础/03Socket UDP快速入门.md",
+    "笔记/Socket 编程/image",
+    "笔记/Socket 编程/06 简单聊天室实现和问题.md",
     "笔记/Socket 编程/05 UDP辅助TCP实现点对点传输案例.md",
     "笔记/Socket 编程/04 Socket TCP快速入门.md",
     "笔记/Socket 编程/03 Socket UDP快速入门.md",
     "笔记/Socket 编程/02 Socket网络编程快速入门.md",
-    "笔记/Socket 编程/01 课程导学.md",
-    "笔记/Socket 编程/06 简单聊天室实现和问题.md",
-    "笔记/Java IO/03 NIO.md",
-    "笔记/Java IO/02 BIO.md",
-    "笔记/Java IO/01 Java io 基本概念.md",
-    "笔记/面试/Spring 篇.md",
-    "笔记/UML/UML图.md",
-    "笔记/网络安全/01 靶场的搭建.md",
-    "笔记/Netty/01零拷贝.md",
-    "笔记/Netty/02EventLoopGroup.md",
-    "笔记/Netty/00JavaIO.md",
-    "笔记/常见错误/08 MySQL.md",
-    "笔记/常见错误/04 线程安全.md",
-    "笔记/常见错误/03 泛型、反射、编译优化.md",
-    "笔记/常见错误/01 空指针和异常.md",
-    "笔记/数据库选型/01 社交新零售业务.md",
-    "笔记/JUC/进阶/10控制并发流程（做好线程之间的协调人）.md",
-    "笔记/JUC/进阶/06atomic包（一刻也不能分割）.md",
-    "笔记/JUC/进阶/05不可不说的“锁”事（种类繁多，如何一一突破）.md",
     "笔记/Java IO/image",
     "笔记/Java IO",
     "未命名.canvas",
@@ -193,9 +196,6 @@
     "笔记/框架/Nginx/课件/Nginx_day03.pdf",
     "笔记/常见错误/未命名",
     "笔记/异常与调优",
-    "笔记/常见错误/image",
-    "笔记/如何选择数据存储方案/01 社交新零售业务.pdf",
-    "笔记/常见错误",
     "未命名 2.canvas",
     "未命名 1.canvas",
     "学校/毕业设计/数据库表设计.canvas",
