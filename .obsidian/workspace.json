@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/设计模式/04 结构型模式.md",
+                "file": "笔记/设计模式/00 介绍.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04 结构型模式"
+              "title": "00 介绍"
             }
           }
         ]
@@ -111,10 +111,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/设计模式/04 结构型模式.md"
+                "file": "笔记/设计模式/00 介绍.md"
               },
               "icon": "lucide-list",
-              "title": "04 结构型模式 的大纲"
+              "title": "00 介绍 的大纲"
             }
           },
           {
@@ -149,22 +149,27 @@
   },
   "active": "2b994ac5b276ecf5",
   "lastOpenFiles": [
+    "笔记/设计模式/image/Pasted image 20250103004312.png",
+    "笔记/设计模式/image/Pasted image 20250103004239.png",
+    "笔记/设计模式/image/Pasted image 20250103004205.png",
     "笔记/设计模式/05 行为型模式.md",
+    "笔记/设计模式/image/Pasted image 20250103002647.png",
+    "大佬的笔记/SpringBoot/SpringBoot拦截器无法注入Bean/README.md",
+    "大佬的笔记/SpringBoot/将Swagger升级3.0/README.md",
+    "大佬的笔记/SpringBoot/解决升级SpringBoot2.X后无法向eureka注册服务的问题/README.md",
+    "笔记/设计模式/image/Pasted image 20250102224209.png",
+    "笔记/设计模式/image/Pasted image 20250102194535.png",
+    "笔记/设计模式/image/Pasted image 20250102185359.png",
+    "笔记/设计模式/image/Pasted image 20250102155019.png",
+    "笔记/线上故障",
+    "笔记/设计模式/image/Pasted image 20250101232900.png",
+    "笔记/设计模式/image/Pasted image 20250101232846.png",
+    "笔记/设计模式/image/Pasted image 20250101232837.png",
     "笔记/设计模式/04 结构型模式.md",
-    "笔记/设计模式/image/Pasted image 20241229201241.png",
-    "笔记/设计模式/image/Pasted image 20241229201217.png",
-    "笔记/设计模式/image/Pasted image 20241229201140.png",
-    "笔记/设计模式/image/Pasted image 20241229201129.png",
-    "笔记/设计模式/image/Pasted image 20241229201050.png",
     "笔记/设计模式/00 介绍.md",
     "笔记/设计模式/03 创建型模式.md",
-    "笔记/设计模式/image/Pasted image 20241229200942.png",
-    "笔记/设计模式/image/Pasted image 20241229194309.png",
     "笔记/常见错误/08 MySQL.md",
     "笔记/常见错误/09 Redis.md",
-    "笔记/设计模式/image/Pasted image 20241229150454.png",
-    "笔记/设计模式/image/Pasted image 20241229150150.png",
-    "笔记/设计模式/image/Pasted image 20241229150121.png",
     "笔记/常见错误/06 SpringMVC.md",
     "笔记/常见错误/07 Spring Boot.md",
     "笔记/常见错误/05 Spring.md",
@@ -181,10 +186,7 @@
     "笔记/JUC/进阶/07CAS（不可中断的典范）.md",
     "笔记/JUC/基础/07趣解Thread和Object类中线程相关方法.md",
     "笔记/JUC/进阶/06atomic包（一刻也不能分割）.md",
-    "笔记/JUC/基础/05章线程停止、中断之最佳实践.md",
-    "笔记/C/01 C语言基础.md",
     "笔记/设计模式/image",
-    "笔记/Socket 编程/07 服务器传输优化.md",
     "笔记/设计模式",
     "笔记/Socket 编程/image",
     "笔记/Java IO/image",
@@ -194,7 +196,6 @@
     "笔记/常见错误/image 1",
     "笔记/框架/Nginx/课件/Nginx_day03.pdf",
     "笔记/常见错误/未命名",
-    "笔记/异常与调优",
     "未命名 2.canvas",
     "未命名 1.canvas",
     "学校/毕业设计/数据库表设计.canvas",
