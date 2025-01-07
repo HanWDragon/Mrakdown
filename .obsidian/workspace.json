@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/设计模式/00 介绍.md",
-                "mode": "source",
+                "file": "笔记/Docker/01 虚拟化分类和容器.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00 介绍"
+              "title": "01 虚拟化分类和容器"
             }
           }
         ]
@@ -111,10 +111,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/设计模式/00 介绍.md"
+                "file": "笔记/Docker/01 虚拟化分类和容器.md"
               },
               "icon": "lucide-list",
-              "title": "00 介绍 的大纲"
+              "title": "01 虚拟化分类和容器 的大纲"
             }
           },
           {
@@ -130,13 +130,23 @@
               "icon": "lucide-archive",
               "title": "添加笔记属性"
             }
+          },
+          {
+            "id": "d0886fff311ba4b3",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
+            }
           }
         ],
         "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 286.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -144,58 +154,59 @@
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "command-palette:打开命令面板": false,
-      "markdown-importer:打开 Markdown 格式转换器": false
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "2b994ac5b276ecf5",
+  "active": "51c19a84d33453bc",
   "lastOpenFiles": [
-    "笔记/设计模式/image/Pasted image 20250103004312.png",
-    "笔记/设计模式/image/Pasted image 20250103004239.png",
-    "笔记/设计模式/image/Pasted image 20250103004205.png",
-    "笔记/设计模式/05 行为型模式.md",
-    "笔记/设计模式/image/Pasted image 20250103002647.png",
-    "大佬的笔记/SpringBoot/SpringBoot拦截器无法注入Bean/README.md",
-    "大佬的笔记/SpringBoot/将Swagger升级3.0/README.md",
-    "大佬的笔记/SpringBoot/解决升级SpringBoot2.X后无法向eureka注册服务的问题/README.md",
-    "笔记/设计模式/image/Pasted image 20250102224209.png",
-    "笔记/设计模式/image/Pasted image 20250102194535.png",
-    "笔记/设计模式/image/Pasted image 20250102185359.png",
-    "笔记/设计模式/image/Pasted image 20250102155019.png",
-    "笔记/线上故障",
-    "笔记/设计模式/image/Pasted image 20250101232900.png",
-    "笔记/设计模式/image/Pasted image 20250101232846.png",
-    "笔记/设计模式/image/Pasted image 20250101232837.png",
-    "笔记/设计模式/04 结构型模式.md",
-    "笔记/设计模式/00 介绍.md",
-    "笔记/设计模式/03 创建型模式.md",
-    "笔记/常见错误/08 MySQL.md",
-    "笔记/常见错误/09 Redis.md",
-    "笔记/常见错误/06 SpringMVC.md",
-    "笔记/常见错误/07 Spring Boot.md",
-    "笔记/常见错误/05 Spring.md",
-    "笔记/常见错误/03 泛型、反射、编译优化.md",
-    "笔记/常见错误/02 计算、集合、接口.md",
-    "笔记/常见错误/01 空指针和异常.md",
-    "笔记/设计模式/02 软件设计原则.md",
-    "笔记/设计模式/01 UML 入门.md",
-    "笔记/JavaNotes/Prog.md",
-    "笔记/JavaNotes/Java.md",
-    "笔记/Java/Java基础/10.多线程/day22_多线程02/笔记/day12 多线程02.md",
+    "笔记/Git/01GIT开发详解.md",
+    "笔记/Java/JavaNotes/Prog.md",
+    "笔记/Java/JavaNotes/Frame.md",
+    "数学/组合数学/3.母函数/母函数的定义.md",
+    "笔记/Java/JavaNotes/DB.md",
+    "笔记/Java/JavaNotes/Web.md",
+    "笔记/Java/JavaNotes/Tool.md",
+    "笔记/Java/JavaNotes/SSM.md",
+    "笔记/Java/JavaNotes/README.md",
+    "笔记/Java/JavaNotes/Java.md",
+    "数学/组合数学/2.组合数学基础/计数的基本法则.md",
+    "数学/组合数学/2.组合数学基础/可重组合.md",
+    "数学/组合数学/2.组合数学基础/排列组合.md",
+    "数学/组合数学/1.初识组合数学/七桥问题/七桥问题.md",
+    "数学/离散数学/1.预备知识/命题逻辑.md",
+    "数学/离散数学/1.预备知识/一阶谓词逻辑.md",
+    "计算机基础知识/IO/00系统IO原理(Linux).md",
+    "计算机基础知识/IO/01网络IO原理.md",
     "计算机基础知识/随笔/需要了解的底层知识.md",
-    "笔记/JUC/基础/10章 线程安全(工作常用).md",
-    "笔记/JUC/进阶/07CAS（不可中断的典范）.md",
-    "笔记/JUC/基础/07趣解Thread和Object类中线程相关方法.md",
-    "笔记/JUC/进阶/06atomic包（一刻也不能分割）.md",
-    "笔记/设计模式/image",
-    "笔记/设计模式",
-    "笔记/Socket 编程/image",
-    "笔记/Java IO/image",
-    "笔记/Java IO",
+    "计算机基础知识/操作系统/幕客/进程相关.md",
+    "计算机基础知识/操作系统/幕客/储存相关.md",
+    "计算机基础知识/操作系统/幕客/image/image-20211230190442675.png",
+    "笔记/Java/框架/Nginx/笔记/Nginx_day03.md",
+    "笔记/UML/UML图.md",
+    "笔记/Java/框架/Nginx/笔记/Nginx_day01.md",
+    "笔记/Java/框架/Nginx/课件/Nginx_day03.pdf",
+    "笔记/Java/框架/Nginx/课件/Nginx_day01.pdf",
+    "笔记/Java/框架/Redis/Redis.md",
+    "笔记/Java/框架/Spring/Spring笔记.md",
+    "笔记/Java",
+    "笔记/JavaNotes/image/image-20211104204653177.png",
+    "笔记/JavaNotes/image/image-20211104203222519.png",
+    "笔记/JavaNotes/image/image-20211104203240065.png",
+    "笔记/JavaNotes/image/image-20211104203204451.png",
+    "笔记/JavaNotes/image/image-20211104203038405.png",
+    "笔记/JavaNotes/image/image-20211104202950373.png",
+    "笔记/JavaNotes/image/截屏2021-11-04 20.22.36.png",
+    "笔记/JavaNotes/image/image-20211104202905736.png",
+    "笔记/Java/错误、异常、故障",
+    "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250106180723.png",
+    "笔记/Java/错误、异常、故障/线上故障/image",
+    "笔记/Java/错误、异常、故障/线上故障",
+    "笔记/Java/设计模式/image",
+    "笔记/Java/设计模式",
+    "笔记/Java/Socket 编程/image",
+    "笔记/Java/Java IO/image",
     "未命名.canvas",
-    "笔记/异常与调优/image",
-    "笔记/常见错误/image 1",
-    "笔记/框架/Nginx/课件/Nginx_day03.pdf",
-    "笔记/常见错误/未命名",
     "未命名 2.canvas",
     "未命名 1.canvas",
     "学校/毕业设计/数据库表设计.canvas",
