@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4962ae2de1fade47",
+        "id": "6da720e4cfdc6b7c",
         "type": "tabs",
         "children": [
           {
-            "id": "2b994ac5b276ecf5",
+            "id": "2768c6560a8c3a52",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/Docker/01 虚拟化分类和容器.md",
-                "mode": "preview",
+                "file": "笔记/MySQL/相关知识/05如何处理数据更新.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 虚拟化分类和容器"
+              "title": "05如何处理数据更新"
             }
           }
         ]
@@ -111,10 +111,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/Docker/01 虚拟化分类和容器.md"
+                "file": "笔记/MySQL/相关知识/05如何处理数据更新.md"
               },
               "icon": "lucide-list",
-              "title": "01 虚拟化分类和容器 的大纲"
+              "title": "05如何处理数据更新 的大纲"
             }
           },
           {
@@ -140,6 +140,16 @@
               "icon": "spreadsheet",
               "title": "Advanced Tables"
             }
+          },
+          {
+            "id": "2574d9f7d6bccb0d",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
         ],
         "currentTab": 1
@@ -155,40 +165,41 @@
       "graph:查看关系图谱": false,
       "command-palette:打开命令面板": false,
       "markdown-importer:打开 Markdown 格式转换器": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-git:Open Git source control": false
     }
   },
-  "active": "51c19a84d33453bc",
+  "active": "2768c6560a8c3a52",
   "lastOpenFiles": [
-    "笔记/Git/01GIT开发详解.md",
-    "笔记/Java/JavaNotes/Prog.md",
-    "笔记/Java/JavaNotes/Frame.md",
-    "数学/组合数学/3.母函数/母函数的定义.md",
+    "笔记/MySQL/相关知识/08 搭建三高架构的基础.md",
+    "笔记/MySQL/相关知识/09 如何解决数据库超大容量不够问题.md",
+    "笔记/MySQL/相关知识/11 MySQL相关问题.md",
+    "笔记/MySQL/相关知识/12 终章.md",
+    "笔记/MySQL/相关知识/07 怎么给数据上保险.md",
+    "笔记/MySQL/相关知识/06 ORM框架原理.md",
+    "笔记/MySQL/相关知识/05如何处理数据更新.md",
+    "笔记/MySQL/相关知识/04怎么查询速度更快.md",
+    "笔记/MySQL/相关知识/03如何建表更符合业务.md",
+    "笔记/MySQL/相关知识/02一个SQL语句如何执行.md",
+    "笔记/MySQL/优化/01性能监控.md",
+    "笔记/MQ/02入门RabbitMQ核心概念和AMQP协议.md",
+    "笔记/MQ/01 主流消息中间件介绍.md",
+    "笔记/MySQL/优化/03执行计划.md",
+    "笔记/MySQL/优化/02schema与数据类型优化.md",
+    "笔记/MySQL/优化/04通过索引进行优化.md",
+    "笔记/MySQL/优化/05查询优化.md",
+    "笔记/数据库选型/01 社交新零售业务.md",
+    "大佬的笔记/校招面试/JUC/3_谈谈原子类的ABA问题/6_原子类AtomicInteger的ABA问题/README.md",
+    "大佬的笔记/校招面试/JUC/README.md",
     "笔记/Java/JavaNotes/DB.md",
-    "笔记/Java/JavaNotes/Web.md",
-    "笔记/Java/JavaNotes/Tool.md",
-    "笔记/Java/JavaNotes/SSM.md",
-    "笔记/Java/JavaNotes/README.md",
-    "笔记/Java/JavaNotes/Java.md",
-    "数学/组合数学/2.组合数学基础/计数的基本法则.md",
-    "数学/组合数学/2.组合数学基础/可重组合.md",
-    "数学/组合数学/2.组合数学基础/排列组合.md",
-    "数学/组合数学/1.初识组合数学/七桥问题/七桥问题.md",
-    "数学/离散数学/1.预备知识/命题逻辑.md",
-    "数学/离散数学/1.预备知识/一阶谓词逻辑.md",
-    "计算机基础知识/IO/00系统IO原理(Linux).md",
-    "计算机基础知识/IO/01网络IO原理.md",
-    "计算机基础知识/随笔/需要了解的底层知识.md",
-    "计算机基础知识/操作系统/幕客/进程相关.md",
-    "计算机基础知识/操作系统/幕客/储存相关.md",
+    "大佬的笔记/Golang/Golang进阶/18_etcd介绍/README.md",
+    "大佬的笔记/校招面试/面试扫盲学习/5_Redis的面试连环炮2/README.md",
+    "笔记/Java/JavaNotes/Frame.md",
+    "学校/毕业设计/前台和后台搭建.md",
+    "学校/毕业设计/毕业项目简述.md",
     "计算机基础知识/操作系统/幕客/image/image-20211230190442675.png",
-    "笔记/Java/框架/Nginx/笔记/Nginx_day03.md",
-    "笔记/UML/UML图.md",
-    "笔记/Java/框架/Nginx/笔记/Nginx_day01.md",
     "笔记/Java/框架/Nginx/课件/Nginx_day03.pdf",
     "笔记/Java/框架/Nginx/课件/Nginx_day01.pdf",
-    "笔记/Java/框架/Redis/Redis.md",
-    "笔记/Java/框架/Spring/Spring笔记.md",
     "笔记/Java",
     "笔记/JavaNotes/image/image-20211104204653177.png",
     "笔记/JavaNotes/image/image-20211104203222519.png",
