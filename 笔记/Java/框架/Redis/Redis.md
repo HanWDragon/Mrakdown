@@ -156,7 +156,7 @@ Redis中的数据大部分时间都是存储内存中的，适合存储频繁访
 list列表：  13900009999 zs@163.com 321321     list      单key:多有序value:        contacts:13900009999,xxx,xxxx
 set集合：  beijing shanghai chongqing tianjin     set      单key:多无序value:        city:bj sh cq tj
 pojo：       id:1001,name:zhangsan,age:20           hash  单key:对象(属性:值):       student​id:1001,name:zhangsan,age:20
-	                                             	  	  	  	          	zset    单key:多有序vlaue:        city:   1000 tj,1200 cq,1500 sh,2000 bj	
+zset    单key:多有序vlaue:        city:   1000 tj,1200 cq,1500 sh,2000 bj	
 
 ## redis中的操作命令：
 

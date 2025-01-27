@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/MySQL/相关知识/05如何处理数据更新.md",
+                "file": "计算机基础知识/计算机网络/07传输层.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "05如何处理数据更新"
+              "title": "07传输层"
             }
           }
         ]
@@ -43,7 +43,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-folder-closed",
-              "title": "文件列表"
+              "title": "Files"
             }
           },
           {
@@ -52,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": " ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -111,10 +111,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/MySQL/相关知识/05如何处理数据更新.md"
+                "file": "计算机基础知识/计算机网络/07传输层.md"
               },
               "icon": "lucide-list",
-              "title": "05如何处理数据更新 的大纲"
+              "title": "Outline of 07传输层"
             }
           },
           {
@@ -137,18 +137,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
-            }
-          },
-          {
-            "id": "2574d9f7d6bccb0d",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
             }
           }
         ],
@@ -160,63 +150,63 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "canvas:新建白板": false,
-      "switcher:打开快速切换": false,
-      "graph:查看关系图谱": false,
-      "command-palette:打开命令面板": false,
-      "markdown-importer:打开 Markdown 格式转换器": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "markdown-importer:Open format converter": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "obsidian-git:Open Git source control": false
     }
   },
   "active": "2768c6560a8c3a52",
   "lastOpenFiles": [
-    "笔记/MySQL/相关知识/08 搭建三高架构的基础.md",
-    "笔记/MySQL/相关知识/09 如何解决数据库超大容量不够问题.md",
-    "笔记/MySQL/相关知识/11 MySQL相关问题.md",
-    "笔记/MySQL/相关知识/12 终章.md",
-    "笔记/MySQL/相关知识/07 怎么给数据上保险.md",
-    "笔记/MySQL/相关知识/06 ORM框架原理.md",
-    "笔记/MySQL/相关知识/05如何处理数据更新.md",
-    "笔记/MySQL/相关知识/04怎么查询速度更快.md",
-    "笔记/MySQL/相关知识/03如何建表更符合业务.md",
-    "笔记/MySQL/相关知识/02一个SQL语句如何执行.md",
+    "计算机基础知识/计算机网络/06网络层.md",
+    "计算机基础知识/计算机网络/05数据链路层.md",
+    "笔记/Java/Socket 编程/11 即时语音.md",
+    "笔记/Java/Socket 编程/image/Pasted image 20250119204938.png",
+    "笔记/Java/Socket 编程/image/Pasted image 20250119204922.png",
+    "笔记/Java/Socket 编程/10 聊天室优化.md",
+    "笔记/Java/Socket 编程/image/Pasted image 20250119203317.png",
+    "笔记/C++/06 STL.md",
+    "笔记/Java/设计模式/05 行为型模式.md",
+    "笔记/Java/设计模式/04 结构型模式.md",
+    "笔记/Java/设计模式/03 创建型模式.md",
+    "笔记/Java/Socket 编程/image/Pasted image 20250119150637.png",
+    "笔记/Java/Socket 编程/image/Pasted image 20250119150606.png",
+    "笔记/Java/Socket 编程/image/Pasted image 20250119150458.png",
+    "笔记/Java/Socket 编程/image/Pasted image 20250119150250.png",
+    "笔记/Java/Socket 编程/image/Pasted image 20250119150222.png",
+    "笔记/Java/Socket 编程/image/Pasted image 20250119150117.png",
+    "笔记/Java/Socket 编程/image/Pasted image 20250119150036.png",
+    "笔记/Java/Socket 编程/09 文件快传技术.md",
+    "笔记/Java/Socket 编程/08 传输稳定性优化.md",
+    "笔记/Java/Socket 编程/未命名",
+    "笔记/Java/Socket 编程/07 服务器传输优化.md",
+    "笔记/Java/Socket 编程/05 UDP辅助TCP实现点对点传输案例.md",
+    "笔记/MySQL/优化/00 Log 说明.md",
+    "笔记/MySQL/优化/00MySQL的锁机制.md",
+    "笔记/MySQL/优化/00 热身.md",
+    "笔记/MySQL/优化/00 使用数据库说明.md",
     "笔记/MySQL/优化/01性能监控.md",
-    "笔记/MQ/02入门RabbitMQ核心概念和AMQP协议.md",
-    "笔记/MQ/01 主流消息中间件介绍.md",
-    "笔记/MySQL/优化/03执行计划.md",
     "笔记/MySQL/优化/02schema与数据类型优化.md",
+    "笔记/MySQL/优化/03执行计划.md",
     "笔记/MySQL/优化/04通过索引进行优化.md",
     "笔记/MySQL/优化/05查询优化.md",
-    "笔记/数据库选型/01 社交新零售业务.md",
-    "大佬的笔记/校招面试/JUC/3_谈谈原子类的ABA问题/6_原子类AtomicInteger的ABA问题/README.md",
-    "大佬的笔记/校招面试/JUC/README.md",
-    "笔记/Java/JavaNotes/DB.md",
-    "大佬的笔记/Golang/Golang进阶/18_etcd介绍/README.md",
-    "大佬的笔记/校招面试/面试扫盲学习/5_Redis的面试连环炮2/README.md",
-    "笔记/Java/JavaNotes/Frame.md",
-    "学校/毕业设计/前台和后台搭建.md",
-    "学校/毕业设计/毕业项目简述.md",
-    "计算机基础知识/操作系统/幕客/image/image-20211230190442675.png",
+    "笔记/MySQL/优化/07 服务器参数设置.md",
+    "笔记/MySQL/优化/06分区设计和分区优化.md",
+    "笔记/Java/错误、异常、故障/异常与调优/04 Spring 工程编写和调优.md",
+    "学校/星露谷存档转移.md",
+    "学校/image",
+    "笔记/MySQL/相关知识/08 搭建三高架构的基础.md",
     "笔记/Java/框架/Nginx/课件/Nginx_day03.pdf",
     "笔记/Java/框架/Nginx/课件/Nginx_day01.pdf",
     "笔记/Java",
-    "笔记/JavaNotes/image/image-20211104204653177.png",
-    "笔记/JavaNotes/image/image-20211104203222519.png",
-    "笔记/JavaNotes/image/image-20211104203240065.png",
-    "笔记/JavaNotes/image/image-20211104203204451.png",
-    "笔记/JavaNotes/image/image-20211104203038405.png",
-    "笔记/JavaNotes/image/image-20211104202950373.png",
-    "笔记/JavaNotes/image/截屏2021-11-04 20.22.36.png",
-    "笔记/JavaNotes/image/image-20211104202905736.png",
     "笔记/Java/错误、异常、故障",
-    "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250106180723.png",
     "笔记/Java/错误、异常、故障/线上故障/image",
     "笔记/Java/错误、异常、故障/线上故障",
     "笔记/Java/设计模式/image",
     "笔记/Java/设计模式",
-    "笔记/Java/Socket 编程/image",
-    "笔记/Java/Java IO/image",
     "未命名.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",
