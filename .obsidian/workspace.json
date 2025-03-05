@@ -158,8 +158,10 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "1022a93858dfe5df",
+  "active": "51c19a84d33453bc",
   "lastOpenFiles": [
+    "笔记/Go/深入Go语言原理，重写Redis",
+    "笔记/Go",
     "笔记/前端/布局/07其他布局.md",
     "笔记/前端/布局/06实战项目.md",
     "笔记/前端/布局/05响应式布局.md",
@@ -185,7 +187,6 @@
     "笔记/系统设计/04 网站系统，API 设计与短网址.md",
     "笔记/Java/设计模式/05 行为型模式.md",
     "笔记/Java/设计模式/04 结构型模式.md",
-    "笔记/Java/设计模式/03 创建型模式.md",
     "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222153416.png",
     "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222153336.png",
     "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222153308.png",
@@ -205,7 +206,6 @@
     "笔记/职业规划/00",
     "笔记/职业规划",
     "笔记/Java/Netty/image",
-    "笔记/Java/Netty",
     "未命名.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",
