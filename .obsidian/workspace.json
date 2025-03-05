@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/Java/JavaNotes/SSM.md",
-                "mode": "preview",
+                "file": "笔记/前端/布局/01 布局中的尺寸和位置.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SSM"
+              "title": "01 布局中的尺寸和位置"
             }
           }
         ]
@@ -40,11 +40,10 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
-                "autoReveal": false
+                "sortOrder": "alphabetical"
               },
               "icon": "lucide-folder-closed",
-              "title": "Files"
+              "title": "文件列表"
             }
           },
           {
@@ -112,13 +111,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/Java/JavaNotes/SSM.md",
-                "followCursor": false,
-                "showSearch": false,
-                "searchQuery": ""
+                "file": "笔记/前端/布局/01 布局中的尺寸和位置.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of SSM"
+              "title": "01 布局中的尺寸和位置 的大纲"
             }
           },
           {
@@ -154,16 +150,26 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "command-palette:Open command palette": false,
-      "markdown-importer:Open format converter": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "command-palette:打开命令面板": false,
+      "markdown-importer:打开 Markdown 格式转换器": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "1022a93858dfe5df",
   "lastOpenFiles": [
+    "笔记/前端/布局/07其他布局.md",
+    "笔记/前端/布局/06实战项目.md",
+    "笔记/前端/布局/05响应式布局.md",
+    "笔记/前端/布局/04移动端适配布局.md",
+    "笔记/前端/布局/03grid布局.md",
+    "笔记/前端/布局/02 flex布局.md",
+    "笔记/面试/高级后端开发/01 微服务.md",
+    "笔记/面试/高级后端开发/00 引言.md",
+    "笔记/Git/01GIT开发详解.md",
+    "笔记/Java/JavaNotes/SSM.md",
     "笔记/Java/JavaNotes/Tool.md",
     "笔记/Java/JavaNotes/Web.md",
     "笔记/Java/JavaNotes/DB.md",
@@ -180,16 +186,6 @@
     "笔记/Java/设计模式/05 行为型模式.md",
     "笔记/Java/设计模式/04 结构型模式.md",
     "笔记/Java/设计模式/03 创建型模式.md",
-    "笔记/Java/设计模式/02 软件设计原则.md",
-    "笔记/Java/设计模式/01 UML 入门.md",
-    "笔记/Java/框架/Redis/Redis.md",
-    "笔记/面试/常识/Spring 篇.md",
-    "笔记/Java/JUC/进阶/10控制并发流程（做好线程之间的协调人）.md",
-    "学校/毕业设计/前台和后台搭建.md",
-    "学校/毕业设计/毕业项目简述.md",
-    "笔记/职业规划/01 攻城.md",
-    "笔记/Java/JUC/进阶/11AQS（进阶必备，并发灵魂人物）.md",
-    "笔记/Java/JUC/进阶/09ConcurrentHashMap等并发集合(面试超高频考点).md",
     "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222153416.png",
     "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222153336.png",
     "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222153308.png",
