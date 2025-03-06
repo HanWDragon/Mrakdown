@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "8dd9caa9a9da9414",
+        "id": "f665c83268e6babc",
         "type": "tabs",
         "children": [
           {
-            "id": "1022a93858dfe5df",
+            "id": "beb938667eff6ee1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/前端/布局/01 布局中的尺寸和位置.md",
+                "file": "笔记/Go/深入Go语言原理，重写Redis/03 认识 Goroutine协程.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 布局中的尺寸和位置"
+              "title": "03 认识 Goroutine协程"
             }
           }
         ]
@@ -111,10 +111,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/前端/布局/01 布局中的尺寸和位置.md"
+                "file": "笔记/Go/深入Go语言原理，重写Redis/03 认识 Goroutine协程.md"
               },
               "icon": "lucide-list",
-              "title": "01 布局中的尺寸和位置 的大纲"
+              "title": "03 认识 Goroutine协程 的大纲"
             }
           },
           {
@@ -158,8 +158,30 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "51c19a84d33453bc",
+  "active": "beb938667eff6ee1",
   "lastOpenFiles": [
+    "笔记/Go/深入Go语言原理，重写Redis/01 认识GO语言.md",
+    "笔记/Go/深入Go语言原理，重写Redis/02 认识 Go 数据结构.md",
+    "笔记/Go/深入Go语言原理，重写Redis/03 认识 Goroutine协程.md",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250306210549.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250306210406.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250306210344.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250306210249.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250306210147.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250306210057.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250306201549.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250306201331.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250306200952.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250306200442.png",
+    "笔记/Go/深入Go语言原理，重写Redis/00 概览.md",
+    "笔记/Java/Socket 编程/08 传输稳定性优化.md",
+    "笔记/Java/Socket 编程/09 文件快传技术.md",
+    "笔记/Java/Socket 编程/11 即时语音.md",
+    "笔记/Java/Socket 编程/10 聊天室优化.md",
+    "笔记/Java/Socket 编程/05 UDP辅助TCP实现点对点传输案例.md",
+    "笔记/Java/Socket 编程/04 Socket TCP快速入门.md",
+    "笔记/Go/深入Go语言原理，重写Redis/image",
+    "笔记/前端/布局/01 布局中的尺寸和位置.md",
     "笔记/Go/深入Go语言原理，重写Redis",
     "笔记/Go",
     "笔记/前端/布局/07其他布局.md",
@@ -176,27 +198,6 @@
     "笔记/Java/JavaNotes/Web.md",
     "笔记/Java/JavaNotes/DB.md",
     "笔记/Java/JavaNotes/README.md",
-    "笔记/Java/Java IO/03 NIO.md",
-    "笔记/Java/Java IO/04 AIO.md",
-    "笔记/Java/Java IO/01 Java io 基本概念.md",
-    "笔记/提示词工程/提示词工程和大语言模型.md",
-    "别人的笔记/SpringBoot/使用自定义日志接口收集用户访问日志/README.md",
-    "别人的笔记/SpringSecurity/4_SpringSecurity在分布式环境下的使用/README.md",
-    "笔记/系统设计/01 扩展 数据持久化与常见数据库.md",
-    "笔记/系统设计/08 协同编辑系统.md",
-    "笔记/系统设计/04 网站系统，API 设计与短网址.md",
-    "笔记/Java/设计模式/05 行为型模式.md",
-    "笔记/Java/设计模式/04 结构型模式.md",
-    "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222153416.png",
-    "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222153336.png",
-    "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222153308.png",
-    "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222152836.png",
-    "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222151612.png",
-    "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222150344.png",
-    "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222042143.png",
-    "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222041801.png",
-    "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222032438.png",
-    "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222032408.png",
     "笔记/面试/高级后端开发/image",
     "笔记/面试/高级后端开发",
     "笔记/面试/突击/image",
@@ -204,8 +205,6 @@
     "笔记/面试/突击",
     "笔记/职业规划/image",
     "笔记/职业规划/00",
-    "笔记/职业规划",
-    "笔记/Java/Netty/image",
     "未命名.canvas",
     "未命名 2.canvas",
     "未命名 1.canvas",
