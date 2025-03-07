@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/Java/JavaNotes/SSM.md",
+                "file": "笔记/MySQL/优化/03执行计划.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SSM"
+              "title": "03执行计划"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": " ",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,7 +61,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "搜索"
+              "title": "Search"
             }
           },
           {
@@ -112,13 +112,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/Java/JavaNotes/SSM.md",
+                "file": "笔记/MySQL/优化/03执行计划.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of SSM"
+              "title": "Outline of 03执行计划"
             }
           },
           {
@@ -164,32 +164,32 @@
   },
   "active": "1022a93858dfe5df",
   "lastOpenFiles": [
-    "笔记/Java/JavaNotes/Tool.md",
-    "笔记/Java/JavaNotes/Web.md",
-    "笔记/Java/JavaNotes/DB.md",
-    "笔记/Java/JavaNotes/README.md",
-    "笔记/Java/Java IO/03 NIO.md",
-    "笔记/Java/Java IO/04 AIO.md",
-    "笔记/Java/Java IO/01 Java io 基本概念.md",
-    "笔记/提示词工程/提示词工程和大语言模型.md",
-    "别人的笔记/SpringBoot/使用自定义日志接口收集用户访问日志/README.md",
-    "别人的笔记/SpringSecurity/4_SpringSecurity在分布式环境下的使用/README.md",
-    "笔记/系统设计/01 扩展 数据持久化与常见数据库.md",
-    "笔记/系统设计/08 协同编辑系统.md",
-    "笔记/系统设计/04 网站系统，API 设计与短网址.md",
-    "笔记/Java/设计模式/05 行为型模式.md",
-    "笔记/Java/设计模式/04 结构型模式.md",
-    "笔记/Java/设计模式/03 创建型模式.md",
-    "笔记/Java/设计模式/02 软件设计原则.md",
-    "笔记/Java/设计模式/01 UML 入门.md",
-    "笔记/Java/框架/Redis/Redis.md",
-    "笔记/面试/常识/Spring 篇.md",
+    "笔记/MySQL/优化/00MySQL的锁机制.md",
+    "笔记/MySQL/优化/00 Log 说明.md",
+    "笔记/MySQL/优化/00 使用数据库说明.md",
+    "笔记/MySQL/相关知识/05如何处理数据更新.md",
+    "笔记/MySQL/相关知识/06 ORM框架原理.md",
+    "笔记/MySQL/相关知识/07 怎么给数据上保险.md",
+    "笔记/MySQL/相关知识/09 如何解决数据库超大容量不够问题.md",
+    "笔记/MySQL/相关知识/08 搭建三高架构的基础.md",
+    "笔记/MySQL/相关知识/04怎么查询速度更快.md",
+    "笔记/MySQL/相关知识/03如何建表更符合业务.md",
+    "笔记/MySQL/相关知识/02一个SQL语句如何执行.md",
+    "笔记/Java/JVM/JVM内存与垃圾回收篇/4_程序计数器/README.md",
     "笔记/Java/JUC/进阶/10控制并发流程（做好线程之间的协调人）.md",
-    "学校/毕业设计/前台和后台搭建.md",
-    "学校/毕业设计/毕业项目简述.md",
-    "笔记/职业规划/01 攻城.md",
+    "笔记/Java/JUC/进阶/12获取子线程的执行结果(来而不往非礼也).md",
     "笔记/Java/JUC/进阶/11AQS（进阶必备，并发灵魂人物）.md",
-    "笔记/Java/JUC/进阶/09ConcurrentHashMap等并发集合(面试超高频考点).md",
+    "笔记/Java/JUC/进阶/13从0到1打造高性能缓存（学以致用，直击痛点）.md",
+    "笔记/Java/JUC/进阶/04ThreadLocal（一次性解决遗留问题）.md",
+    "笔记/Java/JUC/进阶/03线程池（治理线程的法宝）.md",
+    "笔记/Java/JUC/进阶/01为什么要学习并发编程.md",
+    "笔记/Java/JUC/基础/12深入浅出并发编程底层原理.md",
+    "笔记/Java/JUC/基础/08一网打尽线程属性.md",
+    "笔记/Java/JUC/基础/11多线程的八大核心.md",
+    "笔记/Java/JUC/基础/13并发死锁问题与企业级解决方案.md",
+    "笔记/Java/JUC/基础/07趣解Thread和Object类中线程相关方法.md",
+    "笔记/Java/JUC/基础/06图解线程生命周期.md",
+    "笔记/Java/JUC/基础/05章线程停止、中断之最佳实践.md",
     "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222153416.png",
     "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222153336.png",
     "笔记/Java/错误、异常、故障/线上故障/image/Pasted image 20250222153308.png",
