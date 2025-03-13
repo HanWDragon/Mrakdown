@@ -736,13 +736,15 @@ type p struct {
 
 ![](image/Pasted%20image%2020250308180253.png)
 
-这里就要回到上文中介绍的[协程运行流程](#协程如何在线程上运行)，主要的流程都是在 proc.go 文件里，首先看 schedule 这个是线程循环的第一个方法，我们需要关注如何获取协程
+这里就要回到上文中介绍的[协程运行流程](#协程如何在线程上运行)，主要的流程都是在 proc.go 文件里，首先看 schedule 这个是线程循环的第一个方法，我们需要关注如何获取协程，主要逻辑是 findRunnable 方法
+
+### findRunnable
 
 ```go
 gp, inheritTime, tryWakeP := findRunnable() // blocks until work is available
 
 func findRunnable() (gp *g, inheritTime, tryWakeP bool) {
-	// 获得线程
+	// 获得线程 m 结构体
 	mp := getg().m
 
 	// The conditions here and in handoffp must agree: if
@@ -750,6 +752,7 @@ func findRunnable() (gp *g, inheritTime, tryWakeP bool) {
 	// an M.
 
 top:
+	// 拿到 P 结构体指针
 	pp := mp.p.ptr()
 	if sched.gcwaiting.Load() {
 		gcstopm()
@@ -811,6 +814,7 @@ top:
 	}
 
 	// local runq
+	// 这里就是从本地队列中获取
 	if gp, inheritTime := runqget(pp); gp != nil {
 		return gp, inheritTime, false
 	}
@@ -1119,3 +1123,1153 @@ top:
 	goto top
 } 
 ```
+
+### runqget
+
+这个就是在本地运行队列中获取可用的 g，
+
+```go
+
+// Get g from local runnable queue.
+// If inheritTime is true, gp should inherit the remaining time in the
+// current time slice. Otherwise, it should start a new time slice.
+// Executed only by the owner P.
+func runqget(pp *p) (gp *g, inheritTime bool) {
+	// If there's a runnext, it's the next G to run.
+	next := pp.runnext
+	// If the runnext is non-0 and the CAS fails, it could only have been stolen by another P,
+	// because other Ps can race to set runnext to 0, but only the current P can set it to non-0.
+	// Hence, there's no need to retry this CAS if it fails.
+	if next != 0 && pp.runnext.cas(next, 0) {
+		return next.ptr(), true
+	}
+
+	for {
+		h := atomic.LoadAcq(&pp.runqhead) // load-acquire, synchronize with other consumers
+		t := pp.runqtail
+		if t == h {
+			return nil, false
+		}
+		gp := pp.runq[h%uint32(len(pp.runq))].ptr()
+		if atomic.CasRel(&pp.runqhead, h, h+1) { // cas-release, commits consume
+			return gp, false
+		}
+	}
+}
+```
+
+### globrunqget
+
+```go
+// Try get a batch of G's from the global runnable queue.  
+// sched.lock must be held.  
+func globrunqget(pp *p, max int32) *g {  
+    assertLockHeld(&sched.lock)  
+  
+    if sched.runqsize == 0 {  
+       return nil  
+    }  
+  
+    n := sched.runqsize/gomaxprocs + 1  
+    if n > sched.runqsize {  
+       n = sched.runqsize  
+    }  
+    if max > 0 && n > max {  
+       n = max  
+    }  
+    if n > int32(len(pp.runq))/2 {  
+       n = int32(len(pp.runq)) / 2  
+    }  
+  
+    sched.runqsize -= n  
+  
+    gp := sched.runq.pop()  
+    n--  
+    for ; n > 0; n-- {  
+       gp1 := sched.runq.pop()  
+       runqput(pp, gp1, false)  
+    }  
+    return gp  
+}
+```
+
+### stealWork
+
+```go
+// stealWork attempts to steal a runnable goroutine or timer from any P.
+//
+// If newWork is true, new work may have been readied.
+//
+// If now is not 0 it is the current time. stealWork returns the passed time or
+// the current time if now was passed as 0.
+func stealWork(now int64) (gp *g, inheritTime bool, rnow, pollUntil int64, newWork bool) {
+	pp := getg().m.p.ptr()
+
+	ranTimer := false
+
+	const stealTries = 4
+	for i := 0; i < stealTries; i++ {
+		stealTimersOrRunNextG := i == stealTries-1
+
+		for enum := stealOrder.start(cheaprand()); !enum.done(); enum.next() {
+			if sched.gcwaiting.Load() {
+				// GC work may be available.
+				return nil, false, now, pollUntil, true
+			}
+			p2 := allp[enum.position()]
+			if pp == p2 {
+				continue
+			}
+
+			// Steal timers from p2. This call to checkTimers is the only place
+			// where we might hold a lock on a different P's timers. We do this
+			// once on the last pass before checking runnext because stealing
+			// from the other P's runnext should be the last resort, so if there
+			// are timers to steal do that first.
+			//
+			// We only check timers on one of the stealing iterations because
+			// the time stored in now doesn't change in this loop and checking
+			// the timers for each P more than once with the same value of now
+			// is probably a waste of time.
+			//
+			// timerpMask tells us whether the P may have timers at all. If it
+			// can't, no need to check at all.
+			if stealTimersOrRunNextG && timerpMask.read(enum.position()) {
+				tnow, w, ran := p2.timers.check(now)
+				now = tnow
+				if w != 0 && (pollUntil == 0 || w < pollUntil) {
+					pollUntil = w
+				}
+				if ran {
+					// Running the timers may have
+					// made an arbitrary number of G's
+					// ready and added them to this P's
+					// local run queue. That invalidates
+					// the assumption of runqsteal
+					// that it always has room to add
+					// stolen G's. So check now if there
+					// is a local G to run.
+					if gp, inheritTime := runqget(pp); gp != nil {
+						return gp, inheritTime, now, pollUntil, ranTimer
+					}
+					ranTimer = true
+				}
+			}
+
+			// Don't bother to attempt to steal if p2 is idle.
+			if !idlepMask.read(enum.position()) {
+				if gp := runqsteal(pp, p2, stealTimersOrRunNextG); gp != nil {
+					return gp, false, now, pollUntil, ranTimer
+				}
+			}
+		}
+	}
+
+	// No goroutines found to steal. Regardless, running a timer may have
+	// made some goroutine ready that we missed. Indicate the next timer to
+	// wait for.
+	return nil, false, now, pollUntil, ranTimer
+}
+
+```
+
+## 任务窃取
+
+![](image/Pasted%20image%2020250310190013.png)
+
+![](image/Pasted%20image%2020250310190028.png)
+
+### 偷取机制
+
+![](image/Pasted%20image%2020250310190125.png)
+
+## 新建协程
+
+![](image/Pasted%20image%2020250310190303.png)
+
+在 runtime 包下 proc.go 文件中的 newproc 方法
+
+```go
+// Create a new g running fn.
+// Put it on the queue of g's waiting to run.
+// The compiler turns a go statement into a call to this.
+func newproc(fn *funcval) {
+	gp := getg()
+	pc := sys.GetCallerPC()
+	systemstack(func() {
+		newg := newproc1(fn, gp, pc, false, waitReasonZero)
+
+		pp := getg().m.p.ptr()
+		runqput(pp, newg, true)
+
+		if mainStarted {
+			wakep()
+		}
+	})
+}
+
+// Create a new g in state _Grunnable (or _Gwaiting if parked is true), starting at fn.
+// callerpc is the address of the go statement that created this. The caller is responsible
+// for adding the new g to the scheduler. If parked is true, waitreason must be non-zero.
+func newproc1(fn *funcval, callergp *g, callerpc uintptr, parked bool, waitreason waitReason) *g {
+	if fn == nil {
+		fatal("go of nil func value")
+	}
+
+	mp := acquirem() // disable preemption because we hold M and P in local vars.
+	pp := mp.p.ptr()
+	newg := gfget(pp)
+	if newg == nil {
+		newg = malg(stackMin)
+		casgstatus(newg, _Gidle, _Gdead)
+		allgadd(newg) // publishes with a g->status of Gdead so GC scanner doesn't look at uninitialized stack.
+	}
+	if newg.stack.hi == 0 {
+		throw("newproc1: newg missing stack")
+	}
+
+	if readgstatus(newg) != _Gdead {
+		throw("newproc1: new g is not Gdead")
+	}
+
+	totalSize := uintptr(4*goarch.PtrSize + sys.MinFrameSize) // extra space in case of reads slightly beyond frame
+	totalSize = alignUp(totalSize, sys.StackAlign)
+	sp := newg.stack.hi - totalSize
+	if usesLR {
+		// caller's LR
+		*(*uintptr)(unsafe.Pointer(sp)) = 0
+		prepGoExitFrame(sp)
+	}
+	if GOARCH == "arm64" {
+		// caller's FP
+		*(*uintptr)(unsafe.Pointer(sp - goarch.PtrSize)) = 0
+	}
+
+	memclrNoHeapPointers(unsafe.Pointer(&newg.sched), unsafe.Sizeof(newg.sched))
+	newg.sched.sp = sp
+	newg.stktopsp = sp
+	newg.sched.pc = abi.FuncPCABI0(goexit) + sys.PCQuantum // +PCQuantum so that previous instruction is in same function
+	newg.sched.g = guintptr(unsafe.Pointer(newg))
+	gostartcallfn(&newg.sched, fn)
+	newg.parentGoid = callergp.goid
+	newg.gopc = callerpc
+	newg.ancestors = saveAncestors(callergp)
+	newg.startpc = fn.fn
+	if isSystemGoroutine(newg, false) {
+		sched.ngsys.Add(1)
+	} else {
+		// Only user goroutines inherit synctest groups and pprof labels.
+		newg.syncGroup = callergp.syncGroup
+		if mp.curg != nil {
+			newg.labels = mp.curg.labels
+		}
+		if goroutineProfile.active {
+			// A concurrent goroutine profile is running. It should include
+			// exactly the set of goroutines that were alive when the goroutine
+			// profiler first stopped the world. That does not include newg, so
+			// mark it as not needing a profile before transitioning it from
+			// _Gdead.
+			newg.goroutineProfiled.Store(goroutineProfileSatisfied)
+		}
+	}
+	// Track initial transition?
+	newg.trackingSeq = uint8(cheaprand())
+	if newg.trackingSeq%gTrackingPeriod == 0 {
+		newg.tracking = true
+	}
+	gcController.addScannableStack(pp, int64(newg.stack.hi-newg.stack.lo))
+
+	// Get a goid and switch to runnable. Make all this atomic to the tracer.
+	trace := traceAcquire()
+	var status uint32 = _Grunnable
+	if parked {
+		status = _Gwaiting
+		newg.waitreason = waitreason
+	}
+	if pp.goidcache == pp.goidcacheend {
+		// Sched.goidgen is the last allocated id,
+		// this batch must be [sched.goidgen+1, sched.goidgen+GoidCacheBatch].
+		// At startup sched.goidgen=0, so main goroutine receives goid=1.
+		pp.goidcache = sched.goidgen.Add(_GoidCacheBatch)
+		pp.goidcache -= _GoidCacheBatch - 1
+		pp.goidcacheend = pp.goidcache + _GoidCacheBatch
+	}
+	newg.goid = pp.goidcache
+	casgstatus(newg, _Gdead, status)
+	pp.goidcache++
+	newg.trace.reset()
+	if trace.ok() {
+		trace.GoCreate(newg, newg.startpc, parked)
+		traceRelease(trace)
+	}
+
+	// Set up race context.
+	if raceenabled {
+		newg.racectx = racegostart(callerpc)
+		newg.raceignore = 0
+		if newg.labels != nil {
+			// See note in proflabel.go on labelSync's role in synchronizing
+			// with the reads in the signal handler.
+			racereleasemergeg(newg, unsafe.Pointer(&labelSync))
+		}
+	}
+	releasem(mp)
+
+	return newg
+}
+```
+
+## 问题
+
+解决了第二个问题，现在还剩第一个问题，通过本地队列避免了总是竞争全局独占锁，现在就是如何实现线程上协程的鬓发
+
+![](image/Pasted%20image%2020250310190655.png)
+
+# 如何实现协程并发
+
+## 问题
+
+上文通过 GMP 调度模型解决了第二个问题，现在还有第一个问题
+
+![](image/Pasted%20image%2020250310190927.png)
+
+## 协程饥饿问题
+
+有两个耗时协程，假如耗时，将线程占住了，后面很多时间敏感任务就会失败
+
+![](image/Pasted%20image%2020250310191124.png)
+
+### 全局队列饥饿
+
+如果时间过长后中断保存放入本地队列，会导致本地队列一直循环，导致在全局队列中的任务得不到执行
+
+![](image/Pasted%20image%2020250310192013.png)
+
+解决方法就是每隔一段时间或者其他条件，从全局任务队列中获取一些任务，参与到小循环
+
+![](image/Pasted%20image%2020250310192420.png)
+
+## 线程循环
+
+![](image/Pasted%20image%2020250310191338.png)
+
+### 触发切换
+
+![](image/Pasted%20image%2020250310191516.png)
+
+主要是在 runtime 包下 proc.go 文件的 findRunnable 方法
+
+```go
+// Check the global runnable queue once in a while to ensure fairness.  
+// Otherwise two goroutines can completely occupy the local runqueue  
+// by constantly respawning each other.  
+if pp.schedtick%61 == 0 && sched.runqsize > 0 {  
+    lock(&sched.lock)  
+    gp := globrunqget(pp, 1)  
+    unlock(&sched.lock)  
+    if gp != nil {  
+       return gp, false, false  
+    }  
+}
+```
+
+### 切换时机
+
+![](image/Pasted%20image%2020250310193753.png)
+
+#### 主动挂起（runtime.gopark）
+
+很多提供的 API 底层都使用了这个，不过这个方法是小写开头，用户无法调用，但是可以使用 Sleep 来间接的使用，还有一个问题是，调用之后就进入等待排队状态，满足条件才可以运行
+
+![](image/Pasted%20image%2020250310202515.png)
+
+```go
+// Puts the current goroutine into a waiting state and calls unlockf on the
+// system stack.
+//
+// If unlockf returns false, the goroutine is resumed.
+//
+// unlockf must not access this G's stack, as it may be moved between
+// the call to gopark and the call to unlockf.
+//
+// Note that because unlockf is called after putting the G into a waiting
+// state, the G may have already been readied by the time unlockf is called
+// unless there is external synchronization preventing the G from being
+// readied. If unlockf returns false, it must guarantee that the G cannot be
+// externally readied.
+//
+// Reason explains why the goroutine has been parked. It is displayed in stack
+// traces and heap dumps. Reasons should be unique and descriptive. Do not
+// re-use reasons, add new ones.
+//
+// gopark should be an internal detail,
+// but widely used packages access it using linkname.
+// Notable members of the hall of shame include:
+//   - gvisor.dev/gvisor
+//   - github.com/sagernet/gvisor
+//
+// Do not remove or change the type signature.
+// See go.dev/issue/67401.
+//
+//go:linkname gopark
+func gopark(unlockf func(*g, unsafe.Pointer) bool, lock unsafe.Pointer, reason waitReason, traceReason traceBlockReason, traceskip int) {
+	if reason != waitReasonSleep {
+		checkTimeouts() // timeouts may expire while two goroutines keep the scheduler busy
+	}
+	mp := acquirem()
+	gp := mp.curg
+	status := readgstatus(gp)
+	if status != _Grunning && status != _Gscanrunning {
+		throw("gopark: bad g status")
+	}
+	mp.waitlock = lock
+	mp.waitunlockf = unlockf
+	gp.waitreason = reason
+	mp.waitTraceBlockReason = traceReason
+	mp.waitTraceSkip = traceskip
+	releasem(mp)
+	// can't do anything that might move the G between Ms here.
+	// 从 g 到 g0
+	mcall(park_m)
+}
+```
+
+#### 系统调用完成时
+
+![](image/Pasted%20image%2020250310203716.png)
+
+```go
+// The goroutine g exited its system call.
+// Arrange for it to run on a cpu again.
+// This is called only from the go syscall library, not
+// from the low-level system calls used by the runtime.
+//
+// Write barriers are not allowed because our P may have been stolen.
+//
+// This is exported via linkname to assembly in the syscall package.
+//
+// exitsyscall should be an internal detail,
+// but widely used packages access it using linkname.
+// Notable members of the hall of shame include:
+//   - gvisor.dev/gvisor
+//
+// Do not remove or change the type signature.
+// See go.dev/issue/67401.
+//
+//go:nosplit
+//go:nowritebarrierrec
+//go:linkname exitsyscall
+func exitsyscall() {
+	gp := getg()
+
+	gp.m.locks++ // see comment in entersyscall
+	if sys.GetCallerSP() > gp.syscallsp {
+		throw("exitsyscall: syscall frame is no longer valid")
+	}
+
+	gp.waitsince = 0
+	oldp := gp.m.oldp.ptr()
+	gp.m.oldp = 0
+	if exitsyscallfast(oldp) {
+		// When exitsyscallfast returns success, we have a P so can now use
+		// write barriers
+		if goroutineProfile.active {
+			// Make sure that gp has had its stack written out to the goroutine
+			// profile, exactly as it was when the goroutine profiler first
+			// stopped the world.
+			systemstack(func() {
+				tryRecordGoroutineProfileWB(gp)
+			})
+		}
+		trace := traceAcquire()
+		if trace.ok() {
+			lostP := oldp != gp.m.p.ptr() || gp.m.syscalltick != gp.m.p.ptr().syscalltick
+			systemstack(func() {
+				// Write out syscall exit eagerly.
+				//
+				// It's important that we write this *after* we know whether we
+				// lost our P or not (determined by exitsyscallfast).
+				trace.GoSysExit(lostP)
+				if lostP {
+					// We lost the P at some point, even though we got it back here.
+					// Trace that we're starting again, because there was a traceGoSysBlock
+					// call somewhere in exitsyscallfast (indicating that this goroutine
+					// had blocked) and we're about to start running again.
+					trace.GoStart()
+				}
+			})
+		}
+		// There's a cpu for us, so we can run.
+		gp.m.p.ptr().syscalltick++
+		// We need to cas the status and scan before resuming...
+		casgstatus(gp, _Gsyscall, _Grunning)
+		if trace.ok() {
+			traceRelease(trace)
+		}
+
+		// Garbage collector isn't running (since we are),
+		// so okay to clear syscallsp.
+		gp.syscallsp = 0
+		gp.m.locks--
+		if gp.preempt {
+			// restore the preemption request in case we've cleared it in newstack
+			gp.stackguard0 = stackPreempt
+		} else {
+			// otherwise restore the real stackGuard, we've spoiled it in entersyscall/entersyscallblock
+			gp.stackguard0 = gp.stack.lo + stackGuard
+		}
+		gp.throwsplit = false
+
+		if sched.disable.user && !schedEnabled(gp) {
+			// Scheduling of this goroutine is disabled.
+			Gosched()
+		}
+
+		return
+	}
+
+	gp.m.locks--
+
+	// Call the scheduler.
+	mcall(exitsyscall0)
+
+	// Scheduler returned, so we're allowed to run now.
+	// Delete the syscallsp information that we left for
+	// the garbage collector during the system call.
+	// Must wait until now because until gosched returns
+	// we don't know for sure that the garbage collector
+	// is not running.
+	gp.syscallsp = 0
+	gp.m.p.ptr().syscalltick++
+	gp.throwsplit = false
+}
+
+// Gosched yields the processor, allowing other goroutines to run. It does not
+// suspend the current goroutine, so execution resumes automatically.
+//
+//go:nosplit
+func Gosched() {
+	checkTimeouts()
+	mcall(gosched_m)
+}
+
+// Gosched continuation on g0.
+func gosched_m(gp *g) {
+	goschedImpl(gp, false)
+}
+
+func goschedImpl(gp *g, preempted bool) {
+	trace := traceAcquire()
+	status := readgstatus(gp)
+	if status&^_Gscan != _Grunning {
+		dumpgstatus(gp)
+		throw("bad g status")
+	}
+	if trace.ok() {
+		// Trace the event before the transition. It may take a
+		// stack trace, but we won't own the stack after the
+		// transition anymore.
+		if preempted {
+			trace.GoPreempt()
+		} else {
+			trace.GoSched()
+		}
+	}
+	casgstatus(gp, _Grunning, _Grunnable)
+	if trace.ok() {
+		traceRelease(trace)
+	}
+
+	dropg()
+	lock(&sched.lock)
+	globrunqput(gp)
+	unlock(&sched.lock)
+
+	if mainStarted {
+		wakep()
+	}
+
+	schedule()
+}
+
+```
+
+## 总结
+
+![](image/Pasted%20image%2020250311083833.png)
+
+## 还存在的问题
+
+![](image/Pasted%20image%2020250311083922.png)
+
+# 抢占式调度
+
+假如有协程不主动挂起，不进行系统调用，执行纯计算任务，还是会存在并发问题，就是[还存在的问题](#问题)里提到的，思路就是不管任何协程都需要调用其他方法，都会对栈进行操作
+
+## 思路
+
+![](image/Pasted%20image%2020250311084508.png)
+
+这个是通过 `go build -gcflags -S main.go` 在汇编中寻找，发现每次调用函数之前都会调用这个方法 runtime.morestack 方法
+
+## morestack
+
+![](image/Pasted%20image%2020250311085217.png)
+
+## 标记抢占
+
+![](image/Pasted%20image%2020250311085317.png)
+
+## 抢占
+
+![](image/Pasted%20image%2020250311100739.png)
+
+ runtime 包下 stubs.go 下的 morestack 方法，具体实现在汇编
+
+```go
+func morestack()
+
+// Called during function prolog when more stack is needed.
+//
+// The traceback routines see morestack on a g0 as being
+// the top of a stack (for example, morestack calling newstack
+// calling the scheduler calling newm calling gc), so we must
+// record an argument size. For that purpose, it has no arguments.
+TEXT runtime·morestack(SB),NOSPLIT|NOFRAME,$0-0
+	// Cannot grow scheduler stack (m->g0).
+	get_tls(CX)
+	MOVQ	g(CX), DI     // DI = g
+	MOVQ	g_m(DI), BX   // BX = m
+
+	// Set g->sched to context in f.
+	MOVQ	0(SP), AX // f's PC
+	MOVQ	AX, (g_sched+gobuf_pc)(DI)
+	LEAQ	8(SP), AX // f's SP
+	MOVQ	AX, (g_sched+gobuf_sp)(DI)
+	MOVQ	BP, (g_sched+gobuf_bp)(DI)
+	MOVQ	DX, (g_sched+gobuf_ctxt)(DI)
+
+	MOVQ	m_g0(BX), SI  // SI = m.g0
+	CMPQ	DI, SI
+	JNE	3(PC)
+	CALL	runtime·badmorestackg0(SB)
+	CALL	runtime·abort(SB)
+
+	// Cannot grow signal stack (m->gsignal).
+	MOVQ	m_gsignal(BX), SI
+	CMPQ	DI, SI
+	JNE	3(PC)
+	CALL	runtime·badmorestackgsignal(SB)
+	CALL	runtime·abort(SB)
+
+	// Called from f.
+	// Set m->morebuf to f's caller.
+	NOP	SP	// tell vet SP changed - stop checking offsets
+	MOVQ	8(SP), AX	// f's caller's PC
+	MOVQ	AX, (m_morebuf+gobuf_pc)(BX)
+	LEAQ	16(SP), AX	// f's caller's SP
+	MOVQ	AX, (m_morebuf+gobuf_sp)(BX)
+	MOVQ	DI, (m_morebuf+gobuf_g)(BX)
+
+	// Call newstack on m->g0's stack.
+	MOVQ	m_g0(BX), BX
+	MOVQ	BX, g(CX)
+	MOVQ	(g_sched+gobuf_sp)(BX), SP
+	MOVQ	(g_sched+gobuf_bp)(BX), BP
+	CALL	runtime·newstack(SB)
+	CALL	runtime·abort(SB)	// crash if newstack returns
+	RET
+```
+
+### newstack
+
+`preempt := stackguard0 == stackPreempt` 这个就是主要的判断是否抢占的逻辑，后续就回到 schedule 方法，又开始循环
+
+```go
+
+// Goroutine preemption request.  
+// 0xfffffade in hex.  
+stackPreempt = uintptrMask & -1314
+
+// Called from runtime·morestack when more stack is needed.
+// Allocate larger stack and relocate to new stack.
+// Stack growth is multiplicative, for constant amortized cost.
+//
+// g->atomicstatus will be Grunning or Gscanrunning upon entry.
+// If the scheduler is trying to stop this g, then it will set preemptStop.
+//
+// This must be nowritebarrierrec because it can be called as part of
+// stack growth from other nowritebarrierrec functions, but the
+// compiler doesn't check this.
+//
+//go:nowritebarrierrec
+func newstack() {
+	thisg := getg()
+	// TODO: double check all gp. shouldn't be getg().
+	if thisg.m.morebuf.g.ptr().stackguard0 == stackFork {
+		throw("stack growth after fork")
+	}
+	if thisg.m.morebuf.g.ptr() != thisg.m.curg {
+		print("runtime: newstack called from g=", hex(thisg.m.morebuf.g), "\n"+"\tm=", thisg.m, " m->curg=", thisg.m.curg, " m->g0=", thisg.m.g0, " m->gsignal=", thisg.m.gsignal, "\n")
+		morebuf := thisg.m.morebuf
+		traceback(morebuf.pc, morebuf.sp, morebuf.lr, morebuf.g.ptr())
+		throw("runtime: wrong goroutine in newstack")
+	}
+
+	gp := thisg.m.curg
+
+	if thisg.m.curg.throwsplit {
+		// Update syscallsp, syscallpc in case traceback uses them.
+		morebuf := thisg.m.morebuf
+		gp.syscallsp = morebuf.sp
+		gp.syscallpc = morebuf.pc
+		pcname, pcoff := "(unknown)", uintptr(0)
+		f := findfunc(gp.sched.pc)
+		if f.valid() {
+			pcname = funcname(f)
+			pcoff = gp.sched.pc - f.entry()
+		}
+		print("runtime: newstack at ", pcname, "+", hex(pcoff),
+			" sp=", hex(gp.sched.sp), " stack=[", hex(gp.stack.lo), ", ", hex(gp.stack.hi), "]\n",
+			"\tmorebuf={pc:", hex(morebuf.pc), " sp:", hex(morebuf.sp), " lr:", hex(morebuf.lr), "}\n",
+			"\tsched={pc:", hex(gp.sched.pc), " sp:", hex(gp.sched.sp), " lr:", hex(gp.sched.lr), " ctxt:", gp.sched.ctxt, "}\n")
+
+		thisg.m.traceback = 2 // Include runtime frames
+		traceback(morebuf.pc, morebuf.sp, morebuf.lr, gp)
+		throw("runtime: stack split at bad time")
+	}
+
+	morebuf := thisg.m.morebuf
+	thisg.m.morebuf.pc = 0
+	thisg.m.morebuf.lr = 0
+	thisg.m.morebuf.sp = 0
+	thisg.m.morebuf.g = 0
+
+	// NOTE: stackguard0 may change underfoot, if another thread
+	// is about to try to preempt gp. Read it just once and use that same
+	// value now and below.
+	stackguard0 := atomic.Loaduintptr(&gp.stackguard0)
+
+	// Be conservative about where we preempt.
+	// We are interested in preempting user Go code, not runtime code.
+	// If we're holding locks, mallocing, or preemption is disabled, don't
+	// preempt.
+	// This check is very early in newstack so that even the status change
+	// from Grunning to Gwaiting and back doesn't happen in this case.
+	// That status change by itself can be viewed as a small preemption,
+	// because the GC might change Gwaiting to Gscanwaiting, and then
+	// this goroutine has to wait for the GC to finish before continuing.
+	// If the GC is in some way dependent on this goroutine (for example,
+	// it needs a lock held by the goroutine), that small preemption turns
+	// into a real deadlock.
+	preempt := stackguard0 == stackPreempt
+	if preempt {
+		if !canPreemptM(thisg.m) {
+			// Let the goroutine keep running for now.
+			// gp->preempt is set, so it will be preempted next time.
+			gp.stackguard0 = gp.stack.lo + stackGuard
+			gogo(&gp.sched) // never return
+		}
+	}
+
+	if gp.stack.lo == 0 {
+		throw("missing stack in newstack")
+	}
+	sp := gp.sched.sp
+	if goarch.ArchFamily == goarch.AMD64 || goarch.ArchFamily == goarch.I386 || goarch.ArchFamily == goarch.WASM {
+		// The call to morestack cost a word.
+		sp -= goarch.PtrSize
+	}
+	if stackDebug >= 1 || sp < gp.stack.lo {
+		print("runtime: newstack sp=", hex(sp), " stack=[", hex(gp.stack.lo), ", ", hex(gp.stack.hi), "]\n",
+			"\tmorebuf={pc:", hex(morebuf.pc), " sp:", hex(morebuf.sp), " lr:", hex(morebuf.lr), "}\n",
+			"\tsched={pc:", hex(gp.sched.pc), " sp:", hex(gp.sched.sp), " lr:", hex(gp.sched.lr), " ctxt:", gp.sched.ctxt, "}\n")
+	}
+	if sp < gp.stack.lo {
+		print("runtime: gp=", gp, ", goid=", gp.goid, ", gp->status=", hex(readgstatus(gp)), "\n ")
+		print("runtime: split stack overflow: ", hex(sp), " < ", hex(gp.stack.lo), "\n")
+		throw("runtime: split stack overflow")
+	}
+
+	if preempt {
+		if gp == thisg.m.g0 {
+			throw("runtime: preempt g0")
+		}
+		if thisg.m.p == 0 && thisg.m.locks == 0 {
+			throw("runtime: g is running but p is not")
+		}
+
+		if gp.preemptShrink {
+			// We're at a synchronous safe point now, so
+			// do the pending stack shrink.
+			gp.preemptShrink = false
+			shrinkstack(gp)
+		}
+
+		if gp.preemptStop {
+			preemptPark(gp) // never returns
+		}
+
+		// Act like goroutine called runtime.Gosched.
+		gopreempt_m(gp) // never return
+	}
+
+	// Allocate a bigger segment and move the stack.
+	oldsize := gp.stack.hi - gp.stack.lo
+	newsize := oldsize * 2
+
+	// Make sure we grow at least as much as needed to fit the new frame.
+	// (This is just an optimization - the caller of morestack will
+	// recheck the bounds on return.)
+	if f := findfunc(gp.sched.pc); f.valid() {
+		max := uintptr(funcMaxSPDelta(f))
+		needed := max + stackGuard
+		used := gp.stack.hi - gp.sched.sp
+		for newsize-used < needed {
+			newsize *= 2
+		}
+	}
+
+	if stackguard0 == stackForceMove {
+		// Forced stack movement used for debugging.
+		// Don't double the stack (or we may quickly run out
+		// if this is done repeatedly).
+		newsize = oldsize
+	}
+
+	if newsize > maxstacksize || newsize > maxstackceiling {
+		if maxstacksize < maxstackceiling {
+			print("runtime: goroutine stack exceeds ", maxstacksize, "-byte limit\n")
+		} else {
+			print("runtime: goroutine stack exceeds ", maxstackceiling, "-byte limit\n")
+		}
+		print("runtime: sp=", hex(sp), " stack=[", hex(gp.stack.lo), ", ", hex(gp.stack.hi), "]\n")
+		throw("stack overflow")
+	}
+
+	// The goroutine must be executing in order to call newstack,
+	// so it must be Grunning (or Gscanrunning).
+	casgstatus(gp, _Grunning, _Gcopystack)
+
+	// The concurrent GC will not scan the stack while we are doing the copy since
+	// the gp is in a Gcopystack status.
+	copystack(gp, newsize)
+	if stackDebug >= 1 {
+		print("stack grow done\n")
+	}
+	casgstatus(gp, _Gcopystack, _Grunning)
+	gogo(&gp.sched)
+}
+```
+
+## 基于协作的抢占式调度
+
+编译器在每次调用函数之前插入 morestack 调用，但是存在问题
+
+![](image/Pasted%20image%2020250311113506.png)
+
+多开几个这种协程，线程都会被占住，所以有基于信号的抢占式调度，就是找到某种机制来跳出方法
+
+```go
+func do (){
+	i := 1
+	for true {
+		 i++
+	}
+}
+```
+
+## 基于信号的抢占式调度
+
+![](image/Pasted%20image%2020250311114311.png)
+
+![](image/Pasted%20image%2020250311114335.png)
+
+![](image/Pasted%20image%2020250311114424.png)
+
+```go
+// doSigPreempt handles a preemption signal on gp.
+func doSigPreempt(gp *g, ctxt *sigctxt) {
+	// Check if this G wants to be preempted and is safe to
+	// preempt.
+	if wantAsyncPreempt(gp) {
+		if ok, newpc := isAsyncSafePoint(gp, ctxt.sigpc(), ctxt.sigsp(), ctxt.siglr()); ok {
+			// Adjust the PC and inject a call to asyncPreempt.
+			ctxt.pushCall(abi.FuncPCABI0(asyncPreempt), newpc)
+		}
+	}
+
+	// Acknowledge the preemption.
+	gp.m.preemptGen.Add(1)
+	gp.m.signalPending.Store(0)
+
+	if GOOS == "darwin" || GOOS == "ios" {
+		pendingPreemptSignals.Add(-1)
+	}
+}
+
+// asyncPreempt saves all user registers and calls asyncPreempt2.
+//
+// When stack scanning encounters an asyncPreempt frame, it scans that
+// frame and its parent frame conservatively.
+//
+// asyncPreempt is implemented in assembly.
+func asyncPreempt()
+
+
+
+// Code generated by mkpreempt.go; DO NOT EDIT.
+#include "go_asm.h"
+#include "asm_amd64.h"
+#include "textflag.h"
+
+TEXT ·asyncPreempt(SB),NOSPLIT|NOFRAME,$0-0
+	PUSHQ BP
+	MOVQ SP, BP
+	// Save flags before clobbering them
+	PUSHFQ
+	// obj doesn't understand ADD/SUB on SP, but does understand ADJSP
+	ADJSP $368
+	// But vet doesn't know ADJSP, so suppress vet stack checking
+	NOP SP
+	MOVQ AX, 0(SP)
+	MOVQ CX, 8(SP)
+	MOVQ DX, 16(SP)
+	MOVQ BX, 24(SP)
+	MOVQ SI, 32(SP)
+	MOVQ DI, 40(SP)
+	MOVQ R8, 48(SP)
+	MOVQ R9, 56(SP)
+	MOVQ R10, 64(SP)
+	MOVQ R11, 72(SP)
+	MOVQ R12, 80(SP)
+	MOVQ R13, 88(SP)
+	MOVQ R14, 96(SP)
+	MOVQ R15, 104(SP)
+	MOVUPS X0, 112(SP)
+	MOVUPS X1, 128(SP)
+	MOVUPS X2, 144(SP)
+	MOVUPS X3, 160(SP)
+	MOVUPS X4, 176(SP)
+	MOVUPS X5, 192(SP)
+	MOVUPS X6, 208(SP)
+	MOVUPS X7, 224(SP)
+	MOVUPS X8, 240(SP)
+	MOVUPS X9, 256(SP)
+	MOVUPS X10, 272(SP)
+	MOVUPS X11, 288(SP)
+	MOVUPS X12, 304(SP)
+	MOVUPS X13, 320(SP)
+	MOVUPS X14, 336(SP)
+	MOVUPS X15, 352(SP)
+	CALL ·asyncPreempt2(SB)
+	MOVUPS 352(SP), X15
+	MOVUPS 336(SP), X14
+	MOVUPS 320(SP), X13
+	MOVUPS 304(SP), X12
+	MOVUPS 288(SP), X11
+	MOVUPS 272(SP), X10
+	MOVUPS 256(SP), X9
+	MOVUPS 240(SP), X8
+	MOVUPS 224(SP), X7
+	MOVUPS 208(SP), X6
+	MOVUPS 192(SP), X5
+	MOVUPS 176(SP), X4
+	MOVUPS 160(SP), X3
+	MOVUPS 144(SP), X2
+	MOVUPS 128(SP), X1
+	MOVUPS 112(SP), X0
+	MOVQ 104(SP), R15
+	MOVQ 96(SP), R14
+	MOVQ 88(SP), R13
+	MOVQ 80(SP), R12
+	MOVQ 72(SP), R11
+	MOVQ 64(SP), R10
+	MOVQ 56(SP), R9
+	MOVQ 48(SP), R8
+	MOVQ 40(SP), DI
+	MOVQ 32(SP), SI
+	MOVQ 24(SP), BX
+	MOVQ 16(SP), DX
+	MOVQ 8(SP), CX
+	MOVQ 0(SP), AX
+	ADJSP $-368
+	POPFQ
+	POPQ BP
+	RET
+
+//go:nosplit  
+func asyncPreempt2() {  
+    gp := getg()  
+    gp.asyncSafePoint = true  
+    if gp.preemptStop {  
+       mcall(preemptPark)  
+    } else {  
+       mcall(gopreempt_m)  
+    }  
+    gp.asyncSafePoint = false  
+}
+
+// preemptPark parks gp and puts it in _Gpreempted.
+//
+//go:systemstack
+func preemptPark(gp *g) {
+	status := readgstatus(gp)
+	if status&^_Gscan != _Grunning {
+		dumpgstatus(gp)
+		throw("bad g status")
+	}
+
+	if gp.asyncSafePoint {
+		// Double-check that async preemption does not
+		// happen in SPWRITE assembly functions.
+		// isAsyncSafePoint must exclude this case.
+		f := findfunc(gp.sched.pc)
+		if !f.valid() {
+			throw("preempt at unknown pc")
+		}
+		if f.flag&abi.FuncFlagSPWrite != 0 {
+			println("runtime: unexpected SPWRITE function", funcname(f), "in async preempt")
+			throw("preempt SPWRITE")
+		}
+	}
+
+	// Transition from _Grunning to _Gscan|_Gpreempted. We can't
+	// be in _Grunning when we dropg because then we'd be running
+	// without an M, but the moment we're in _Gpreempted,
+	// something could claim this G before we've fully cleaned it
+	// up. Hence, we set the scan bit to lock down further
+	// transitions until we can dropg.
+	casGToPreemptScan(gp, _Grunning, _Gscan|_Gpreempted)
+	dropg()
+
+	// Be careful about how we trace this next event. The ordering
+	// is subtle.
+	//
+	// The moment we CAS into _Gpreempted, suspendG could CAS to
+	// _Gwaiting, do its work, and ready the goroutine. All of
+	// this could happen before we even get the chance to emit
+	// an event. The end result is that the events could appear
+	// out of order, and the tracer generally assumes the scheduler
+	// takes care of the ordering between GoPark and GoUnpark.
+	//
+	// The answer here is simple: emit the event while we still hold
+	// the _Gscan bit on the goroutine. We still need to traceAcquire
+	// and traceRelease across the CAS because the tracer could be
+	// what's calling suspendG in the first place, and we want the
+	// CAS and event emission to appear atomic to the tracer.
+	trace := traceAcquire()
+	if trace.ok() {
+		trace.GoPark(traceBlockPreempted, 0)
+	}
+	casfrom_Gscanstatus(gp, _Gscan|_Gpreempted, _Gpreempted)
+	if trace.ok() {
+		traceRelease(trace)
+	}
+	schedule()
+}
+```
+
+## 总结
+
+![](image/Pasted%20image%2020250311120012.png)
+
+# 协程太多有什么问题
+
+## 无限开启协程
+
+```go
+package main  
+  
+import (  
+    "fmt"  
+    "math"    "time")  
+  
+func main() {  
+    for i := 0; i < math.MaxInt32; i++ {  
+       go func(i int) {  
+          fmt.Println(i)  
+          time.Sleep(time.Second)  
+       }(i)  
+    }  
+    time.Sleep(time.Hour)  
+}
+```
+
+产生了报错 `panic: too many concurrent operations on a single file or socket (max 1048575)`
+
+## 协程太多带来的问题
+
+![](image/Pasted%20image%2020250311131232.png)
+
+## 处理协程太多方案
+
+![](image/Pasted%20image%2020250311131350.png)
+
+### 优化业务逻辑
+
+这是最根本的
+
+### 利用 channel 的缓存区
+
+![](image/Pasted%20image%2020250311134036.png)
+
+```go
+package main  
+  
+import (  
+    "fmt"  
+    "math"    "time")  
+  
+func main() {  
+    c := make(chan struct{}, 3000)  
+    for i := 0; i < math.MaxInt32; i++ {  
+       c <- struct{}{}  
+       go func(i int, c chan struct{}) {  
+          fmt.Println(i)  
+          time.Sleep(time.Second)  
+          <-c  
+       }(i, c)  
+    }  
+    time.Sleep(time.Hour)  
+}
+```
+
+### 协程池
+
+![](image/Pasted%20image%2020250311134233.png)
+
+![](image/Pasted%20image%2020250311134258.png)
+
+### 调整系统资源
+
+## 总结
+
+![](image/Pasted%20image%2020250311134344.png)
+
+# 小结
+
+## 为什么用协程
+
+![](image/Pasted%20image%2020250311134441.png)
+
+## 协程是什么
+
+![](image/Pasted%20image%2020250311134548.png)
+
+## GMP 模型
+
+![](image/Pasted%20image%2020250311134614.png)
+
+![](image/Pasted%20image%2020250311134623.png)
+
+## 协程并发
+
+![](image/Pasted%20image%2020250311134643.png)
+
+![](image/Pasted%20image%2020250311134659.png)
+
+## 抢占式调度
+
+![](image/Pasted%20image%2020250311134754.png)
+
