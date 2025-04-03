@@ -1,24 +1,24 @@
 {
   "main": {
-    "id": "53f9a245f5fcc6d8",
+    "id": "1e3f65bc429b5e8d",
     "type": "split",
     "children": [
       {
-        "id": "e37f85db678cc6b3",
+        "id": "820f5163663e2ea3",
         "type": "tabs",
         "children": [
           {
-            "id": "39ed0a99fa8baf3c",
+            "id": "bd715f77e1a614ad",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/Go/深入Go语言原理，重写Redis/04 认识 Go 锁.md",
+                "file": "笔记/数据库选型/01 社交新零售业务.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "04 认识 Go 锁"
+              "title": "01 社交新零售业务"
             }
           }
         ]
@@ -27,27 +27,28 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "cb845c7ce6fd2a04",
+    "id": "22b6621f6b4811f1",
     "type": "split",
     "children": [
       {
-        "id": "60c131d80c13876c",
+        "id": "e1cbafccb8c9b6d6",
         "type": "tabs",
         "children": [
           {
-            "id": "8e289b8182d3f609",
+            "id": "2d2c40272107f052",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
             }
           },
           {
-            "id": "b7108c35d7dbf0c1",
+            "id": "703ed1bf492d90a9",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -60,17 +61,17 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "搜索"
             }
           },
           {
-            "id": "8c5d9e14b708a988",
+            "id": "f105c7fff77c2b47",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
               "state": {},
               "icon": "lucide-bookmark",
-              "title": "Bookmarks"
+              "title": "书签"
             }
           }
         ]
@@ -80,20 +81,20 @@
     "width": 300
   },
   "right": {
-    "id": "caac4b97f4074b0a",
+    "id": "786d188fc154cd69",
     "type": "split",
     "children": [
       {
-        "id": "c1cee89c3275f7d5",
+        "id": "4b4915bcfcf6734e",
         "type": "tabs",
         "children": [
           {
-            "id": "4409685e291f27e3",
+            "id": "5e5d2a13bd11cece",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "笔记/Go/深入Go语言原理，重写Redis/03 认识 Goroutine协程.md",
+                "file": "笔记/Go/深入Go语言原理，重写Redis/04 认识 Go 锁.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,37 +104,65 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 03 认识 Goroutine协程"
+              "title": "04 认识 Go 锁 的反向链接列表"
             }
           },
           {
-            "id": "aead640a9cbc84a4",
+            "id": "5e9f722bf7dd1dea",
             "type": "leaf",
             "state": {
-              "type": "all-properties",
+              "type": "outgoing-link",
+              "state": {
+                "file": "笔记/Go/深入Go语言原理，重写Redis/04 认识 Go 锁.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "04 认识 Go 锁 的出链列表"
+            }
+          },
+          {
+            "id": "5c075a96566d4ac0",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
               "state": {
                 "sortOrder": "frequency",
+                "useHierarchy": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-archive",
-              "title": "All properties"
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
-            "id": "bca3a38b91c7716d",
+            "id": "4c3b1b4da8a84d2f",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/Go/深入Go语言原理，重写Redis/04 认识 Go 锁.md"
+                "file": "笔记/数据库选型/01 社交新零售业务.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "04 认识 Go 锁 的大纲"
+              "title": "01 社交新零售业务 的大纲"
+            }
+          },
+          {
+            "id": "d62c94ef2d408acc",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -144,40 +173,53 @@
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
+      "templates:插入模板": false,
       "command-palette:打开命令面板": false,
-      "markdown-importer:打开 Markdown 格式转换器": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "39ed0a99fa8baf3c",
+  "active": "bd715f77e1a614ad",
   "lastOpenFiles": [
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250311205947.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250311205934.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250311205527.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250311205201.png",
-    "笔记/前端/布局/03grid布局.md",
-    "笔记/前端/布局/04移动端适配布局.md",
-    "笔记/前端/布局/06实战项目.md",
-    "笔记/前端/布局/05响应式布局.md",
-    "笔记/前端/布局/02 flex布局.md",
-    "笔记/Go/深入Go语言原理，重写Redis/04 认识 Go 锁.md",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250311171656.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250311171229.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250311171114.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250311170531.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250311170423.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250311165500.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250311165021.png",
-    "笔记/Go/深入Go语言原理，重写Redis/03 认识 Goroutine协程.md",
-    "笔记/Go/深入Go语言原理，重写Redis/01 认识GO语言.md",
-    "笔记/Go/深入Go语言原理，重写Redis/02 认识 Go 数据结构.md",
-    "计算机基础知识/计算机网络/08应用层.md",
-    "计算机基础知识/计算机网络/03路由.md",
-    "笔记/C++/04 指针和引用.md",
+    "笔记/数据库选型/00 用更优的数据存储方案，打造更稳定的架构.md",
+    "笔记/数据库选型/01 社交新零售业务.md",
+    "笔记/提示词工程/提示词工程和大语言模型.md",
+    "笔记/系统设计/02 秒杀系统与订票系统设计.md",
+    "笔记/系统设计/04 网站系统，API 设计与短网址.md",
+    "笔记/职业规划/02 经略.md",
+    "笔记/职业规划/01 攻城.md",
+    "笔记/Docker/01 虚拟化分类和容器.md",
+    "笔记/Mysql/优化/05查询优化.md",
+    "笔记/Mysql/优化/04通过索引进行优化.md",
+    "笔记/Mysql/优化/02schema与数据类型优化.md",
+    "笔记/Mysql/优化/01性能监控.md",
+    "笔记/Mysql/优化/00MySQL的锁机制.md",
+    "笔记/Java/错误、异常、故障/异常与调优/04 Spring 工程编写和调优.md",
+    "笔记/Java/JavaNotes.7z",
+    "笔记/Java/错误、异常、故障/异常与调优.7z",
+    "笔记/Java/错误、异常、故障/异常与调优/03 调试.md",
+    "笔记/Java/错误、异常、故障/异常与调优/02 日志.md",
+    "笔记/Java/错误、异常、故障/异常与调优/01 Java 异常.md",
+    "笔记/Java/错误、异常、故障/常见错误.7z",
+    "笔记/Java/错误、异常、故障/常见错误/08 MySQL.md",
+    "笔记/Java/错误、异常、故障/常见错误/07 Spring Boot.md",
+    "笔记/Java/错误、异常、故障/常见错误/06 SpringMVC.md",
     "学校/未命名.md",
-    "学校/未命名",
-    "笔记/C++/06 STL.md",
-    "笔记/C++/05 高级语法.md",
-    "笔记/C++/03 基础容器.md"
+    "笔记/Go/深入Go语言原理，重写Redis/04 认识 Go 锁.md",
+    "学校/毕业设计/前台和后台搭建.md",
+    "学校/毕业设计/毕业项目简述.md",
+    "笔记/Java/设计模式/04 结构型模式.md",
+    "笔记/Java/设计模式/02 软件设计原则.md",
+    "笔记/前端/Vue和工程",
+    "笔记/前端/JS",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318234151.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318234058.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318233957.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318233853.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318233835.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318231055.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318231044.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318225659.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318225052.png",
+    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318223735.png"
   ]
 }

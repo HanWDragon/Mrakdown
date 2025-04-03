@@ -1,21 +1,7 @@
 {
-  "legacyEditor": false,
-  "livePreview": true,
-  "newLinkFormat": "relative",
-  "useMarkdownLinks": true,
   "newFileLocation": "current",
+  "newFileFolderPath": "/",
   "attachmentFolderPath": "./image",
-  "vimMode": false,
-  "promptDelete": true,
-  "communityThemeSortOrder": "download",
-  "pdfExportSettings": {
-    "includeName": true,
-    "pageSize": "A4",
-    "landscape": true,
-    "margin": "0",
-    "downscalePercent": 100
-  },
-  "showLineNumber": false,
-  "spellcheck": false,
-  "readableLineLength": true
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true
 }
