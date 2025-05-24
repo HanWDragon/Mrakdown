@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "笔记/数据库选型/01 社交新零售业务.md",
+                "file": "笔记/前端/可视化/前端可视化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01 社交新零售业务"
+              "title": "前端可视化"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#外边距margin",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "right": {
     "id": "786d188fc154cd69",
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "笔记/数据库选型/01 社交新零售业务.md",
+                "file": "笔记/前端/可视化/前端可视化.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "01 社交新零售业务 的大纲"
+              "title": "前端可视化 的大纲"
             }
           },
           {
@@ -157,8 +157,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-file",
+              "title": "插件不再活动"
             }
           }
         ],
@@ -180,46 +180,51 @@
   },
   "active": "bd715f77e1a614ad",
   "lastOpenFiles": [
-    "笔记/数据库选型/00 用更优的数据存储方案，打造更稳定的架构.md",
-    "笔记/数据库选型/01 社交新零售业务.md",
-    "笔记/提示词工程/提示词工程和大语言模型.md",
-    "笔记/系统设计/02 秒杀系统与订票系统设计.md",
-    "笔记/系统设计/04 网站系统，API 设计与短网址.md",
-    "笔记/职业规划/02 经略.md",
-    "笔记/职业规划/01 攻城.md",
-    "笔记/Docker/01 虚拟化分类和容器.md",
-    "笔记/Mysql/优化/05查询优化.md",
-    "笔记/Mysql/优化/04通过索引进行优化.md",
-    "笔记/Mysql/优化/02schema与数据类型优化.md",
-    "笔记/Mysql/优化/01性能监控.md",
-    "笔记/Mysql/优化/00MySQL的锁机制.md",
-    "笔记/Java/错误、异常、故障/异常与调优/04 Spring 工程编写和调优.md",
-    "笔记/Java/JavaNotes.7z",
-    "笔记/Java/错误、异常、故障/异常与调优.7z",
-    "笔记/Java/错误、异常、故障/异常与调优/03 调试.md",
-    "笔记/Java/错误、异常、故障/异常与调优/02 日志.md",
-    "笔记/Java/错误、异常、故障/异常与调优/01 Java 异常.md",
-    "笔记/Java/错误、异常、故障/常见错误.7z",
+    "笔记/前端/CSS/CSS知识总结.md",
+    "笔记/前端/可视化/前端可视化.md",
+    "笔记/前端/可视化",
+    "笔记/前端/CSS/image/Pasted image 20250524153259.png",
+    "笔记/前端/CSS/image/Pasted image 20250524153238.png",
+    "笔记/前端/CSS/image/Pasted image 20250524153218.png",
+    "笔记/前端/CSS/image/Pasted image 20250524153202.png",
+    "笔记/前端/CSS/image/Pasted image 20250524153130.png",
+    "笔记/前端/CSS/image/Pasted image 20250524152657.png",
+    "笔记/前端/CSS/image/Pasted image 20250524150842.png",
+    "笔记/前端/CSS/image/Pasted image 20250523203214.png",
+    "笔记/前端/CSS/image/Pasted image 20250523203011.png",
+    "笔记/前端/CSS/image/Pasted image 20250523202932.png",
+    "笔记/前端/布局/01 布局中的尺寸和位置.md",
+    "笔记/前端/布局/02 flex布局.md",
+    "笔记/前端/布局/03grid布局.md",
+    "笔记/前端/布局/05响应式布局.md",
+    "笔记/前端/布局/06实战项目.md",
+    "笔记/前端/布局/07其他布局.md",
+    "笔记/前端/布局/04移动端适配布局.md",
     "笔记/Java/错误、异常、故障/常见错误/08 MySQL.md",
-    "笔记/Java/错误、异常、故障/常见错误/07 Spring Boot.md",
-    "笔记/Java/错误、异常、故障/常见错误/06 SpringMVC.md",
-    "学校/未命名.md",
-    "笔记/Go/深入Go语言原理，重写Redis/04 认识 Go 锁.md",
-    "学校/毕业设计/前台和后台搭建.md",
-    "学校/毕业设计/毕业项目简述.md",
-    "笔记/Java/设计模式/04 结构型模式.md",
+    "笔记/Java/错误、异常、故障/线上故障/02 生产故障定位和解决流程.md",
+    "笔记/Java/错误、异常、故障/线上故障/00 生产故障分级概要.md",
+    "笔记/Java/错误、异常、故障/线上故障/01 生产故障原因和分类.md",
+    "笔记/Java/错误、异常、故障/线上故障/03 案例分析.md",
     "笔记/Java/设计模式/02 软件设计原则.md",
-    "笔记/前端/Vue和工程",
-    "笔记/前端/JS",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318234151.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318234058.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318233957.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318233853.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318233835.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318231055.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318231044.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318225659.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318225052.png",
-    "笔记/Go/深入Go语言原理，重写Redis/image/Pasted image 20250318223735.png"
+    "笔记/Java/设计模式/03 创建型模式.md",
+    "笔记/Go/深入Go语言原理，重写Redis/04 认识 Go 锁.md",
+    "笔记/Go/深入Go语言原理，重写Redis/05 认识 Channel 管道.md",
+    "笔记/前端/CSS/image",
+    "笔记/前端/CSS",
+    "笔记/数据库选型/01 社交新零售业务.md",
+    "公司/岗培/设备运维系统管理后台.md",
+    "公司/岗培/音乐信息后台 管理.md",
+    "公司/岗培/TaCloud.md",
+    "公司/岗培/文件上传下载文档.md",
+    "公司/岗培/文件上传下载文档 1.md",
+    "公司/宜昌项目",
+    "公司/岗培/image",
+    "个人/清洁剂主要成分.md",
+    "个人",
+    "学校/简历.md",
+    "公司/岗培",
+    "公司",
+    "笔记/Java/JavaNotes.7z",
+    "笔记/Java/错误、异常、故障/异常与调优.7z"
   ]
 }
